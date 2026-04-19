@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>الخميس ع القهوة ☕🎮</title>
+<title>ع القهوة ☕</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--purple:#b026ff;--blue:#00d4ff;--pink:#ff2d78;--green:#00ff88;--yellow:#ffe600;--orange:#ff8c00;--bg:#0d0a1a;--card:rgba(255,255,255,0.06);--card2:rgba(255,255,255,0.10);--text:#f0e8ff;--sub:rgba(240,232,255,0.6);--r:20px;--sh:0 8px 32px rgba(176,38,255,0.18)}
@@ -405,7 +405,7 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
       <div style="font-size:3rem">🎲</div>
       <div>
-        <div style="font-weight:900;font-size:1rem;margin-bottom:4px">الخميس ع القهوة — الباكدج الكامل</div>
+        <div style="font-weight:900;font-size:1rem;margin-bottom:4px">ع القهوة — الباكدج الكامل</div>
         <div style="font-size:.82rem;color:var(--sub);font-weight:700;line-height:1.6">
           6 ألعاب في بوكس واحد · 300 كارت<br>
           الشلة · الكورة · المسلسلات · الأفلام · العيلة · العالمي<br>
@@ -426,7 +426,7 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <div class="form-card">
       <div class="form-handle"></div>
       <div style="font-weight:900;font-size:1.2rem;margin-bottom:4px">🛒 تفاصيل الطلب</div>
-      <div class="order-summary" id="order-summary-text">🎲 الباكدج الكامل — الخميس ع القهوة</div>
+      <div class="order-summary" id="order-summary-text">🎲 الباكدج الكامل — ع القهوة</div>
       <div class="input-group" style="margin-bottom:12px">
         <label>اسمك الكامل *</label>
         <input type="text" id="order-name" placeholder="مثال: محمد أحمد" maxlength="50">
@@ -2069,7 +2069,7 @@ window.goMode=function(mode){
 };
 
 (function(){
-  const manifest={name:"الخميس ع القهوة",short_name:"الخميس",description:"لعبة مالتيبلاير مصرية للصحاب والعيلة",start_url:"/",display:"standalone",background_color:"#0d0a1a",theme_color:"#b026ff",orientation:"portrait",icons:[{src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%230d0a1a'/%3E%3Ctext y='320' x='256' text-anchor='middle' font-size='300'%3E☕%3C/text%3E%3C/svg%3E",sizes:"512x512",type:"image/svg+xml"}]};
+  const manifest={name:"ع القهوة",short_name:"الخميس",description:"لعبة مالتيبلاير مصرية للصحاب والعيلة",start_url:"/",display:"standalone",background_color:"#0d0a1a",theme_color:"#b026ff",orientation:"portrait",icons:[{src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='80' fill='%230d0a1a'/%3E%3Ctext y='320' x='256' text-anchor='middle' font-size='300'%3E☕%3C/text%3E%3C/svg%3E",sizes:"512x512",type:"image/svg+xml"}]};
   const blob=new Blob([JSON.stringify(manifest)],{type:'application/json'});
   const url=URL.createObjectURL(blob);
   const link=document.createElement('link');link.rel='manifest';link.href=url;
@@ -2078,7 +2078,7 @@ window.goMode=function(mode){
   const meta=document.createElement('meta');meta.name='theme-color';meta.content='#b026ff';document.head.appendChild(meta);
 
   const apple=document.createElement('meta');apple.name='apple-mobile-web-app-capable';apple.content='yes';document.head.appendChild(apple);
-  const appleTitle=document.createElement('meta');appleTitle.name='apple-mobile-web-app-title';appleTitle.content='الخميس';document.head.appendChild(appleTitle);
+  const appleTitle=document.createElement('meta');appleTitle.name='apple-mobile-web-app-title';appleTitle.content='ع القهوة';document.head.appendChild(appleTitle);
 })();
 
 let deferredPrompt=null;
@@ -2101,7 +2101,7 @@ window.addEventListener('beforeinstallprompt',e=>{
 (function(){
   if(localStorage.getItem('wtf_onboarded'))return;
   const steps=[
-    {emoji:'☕',title:'أهلاً بيك!',text:'الخميس ع القهوة — لعبة مالتيبلاير مصرية للصحاب والعيلة من غير ما تنزلوا'},
+    {emoji:'☕',title:'أهلاً بيك!',text:'ع القهوة — لعبة مالتيبلاير مصرية للصحاب والعيلة من غير ما تنزلوا'},
     {emoji:'👥',title:'اختار لعبتك',text:'عندك 6 لعبات: الشلة · كويز الكورة · صراحة ولا تحدي · كويز العيلة · كويز العلوم · أعلام البلدان'},
     {emoji:'🔗',title:'ابعت اللينك',text:'افتح أوضة وابعت الكود لصحابك — هيدخلوا في ثانية من غير تسجيل'},
     {emoji:'🎮',title:'العبوا واضحكوا!',text:'صوّتوا وإجابوا وشاركوا النتايج — اللي بيكسب أكتر أصوات أو نقاط يفوز!'},
@@ -2145,7 +2145,7 @@ function hideLoading(){const el=document.getElementById('loading-overlay');if(el
 
 window.shareResults=async function(text){
   if(navigator.share){
-    try{await navigator.share({title:'الخميس ع القهوة 🎉',text,url:window.location.origin});}
+    try{await navigator.share({title:'ع القهوة 🎉',text,url:window.location.origin});}
     catch(e){}
   } else {
     navigator.clipboard.writeText(text).then(()=>toast('اتنسخ النتيجة 📋'));
@@ -2237,7 +2237,7 @@ enterFinal=async function(room){
 
   const players=Object.values(room.players||{}).sort((a,b)=>(b.badges||[]).length-(a.badges||[]).length);
   const winner=players[0];
-  const shareText=`🏆 جلسة "الخميس ع القهوة"\n👑 الفايز: ${winner?.name||'—'}\n🎮 ${players.length} لاعبين\n🔗 العب معانا: ${window.location.origin}`;
+  const shareText=`🏆 جلسة "ع القهوة"\n👑 الفايز: ${winner?.name||'—'}\n🎮 ${players.length} لاعبين\n🔗 العب معانا: ${window.location.origin}`;
   const shareBtn=document.createElement('button');
   shareBtn.className='btn btn-secondary';
   shareBtn.style='margin-top:-10px;margin-bottom:8px';
@@ -2408,7 +2408,7 @@ input, textarea, button { font-size: 16px !important; }
 }`;
 document.head.appendChild(emojiFixStyle);
 
-console.log('✅ الخميس ع القهوة — كل التحسينات اتحملت');
+console.log('✅ ع القهوة — كل التحسينات اتحملت');
 
 const SCATS_UPDATED = [
   {id:'kamosa', emoji:'😤', name:'قموصة الشلة', badge:'💢', badgeName:'وشه بيقلب في ثانية', color:'#b026ff',
@@ -2979,7 +2979,7 @@ window.submitOrder = async function() {
   if(!address) return toast('اكتب عنوان الشحن 📍');
   if(!phone) return toast('اكتب رقم الواتساب 📱');
 
-  const boxes = 'الباكدج الكامل — الخميس ع القهوة 🎲';
+  const boxes = 'الباكدج الكامل — ع القهوة 🎲';
   const orderData = {
     name, address, phone, notes,
     boxes,
@@ -2993,7 +2993,7 @@ window.submitOrder = async function() {
     await db.ref('orders/' + orderId).set(orderData);
 
     const wa_msg = encodeURIComponent(
-      '🛒 طلب جديد — الخميس ع القهوة\n\n' +
+      '🛒 طلب جديد — ع القهوة\n\n' +
       '📦 البوكسات: ' + boxes + '\n' +
       '👤 الاسم: ' + name + '\n' +
       '📍 العنوان: ' + address + '\n' +
@@ -3004,7 +3004,7 @@ window.submitOrder = async function() {
     const waLink = 'https://wa.me/201117639389?text=' + wa_msg;
 
     const mail_body = encodeURIComponent(
-      'طلب جديد - الخميس ع القهوة\n\n' +
+      'طلب جديد - ع القهوة\n\n' +
       'البوكسات: ' + boxes + '\n' +
       'الاسم: ' + name + '\n' +
       'العنوان: ' + address + '\n' +
@@ -3032,12 +3032,12 @@ window.submitOrder = async function() {
     document.getElementById('order-address').value = '';
     document.getElementById('order-phone').value = '';
     document.getElementById('order-notes').value = '';
-    document.getElementById('order-summary-text').textContent = 'الباكدج الكامل — الخميس ع القهوة 🎲';
+    document.getElementById('order-summary-text').textContent = 'الباكدج الكامل — ع القهوة 🎲';
 
   } catch(e) {
 
     const wa_msg = encodeURIComponent(
-      '🛒 طلب جديد — الخميس ع القهوة\n\n' +
+      '🛒 طلب جديد — ع القهوة\n\n' +
       '📦 البوكسات: ' + boxes + '\n' +
       '👤 الاسم: ' + name + '\n' +
       '📍 العنوان: ' + address + '\n' +
@@ -3090,8 +3090,9 @@ console.log('✅ All globals exposed');
 let guessState = { mode: null, questions: [], idx: 0, score: 0 };
 
 window.startGuessGame = function(mode) {
-  const qs = mode === 'min_el_la3eb' ? shuffle([...MIN_EL_LA3EB_QS]) : shuffle([...MIN_EL_MASSEL_QS]);
-  guessState = { mode, questions: qs, idx: 0, score: 0 };
+  const pool = mode === 'min_el_la3eb' ? MIN_EL_LA3EB_QS : MIN_EL_MASSEL_QS;
+  const qs = shuffle([...pool]).slice(0, 10);
+  guessState = { mode, questions: qs, idx: 0, score: 0, hintIdx: 0 };
   renderGuess();
   showScreen(mode + '-game');
 };
@@ -3101,12 +3102,21 @@ function renderGuess() {
   const suffix = mode === 'min_el_la3eb' ? 'la3eb' : 'massel';
   const q = questions[idx];
   if (!q) { showGuessEnd(); return; }
-  const total = questions.length;
-  document.getElementById('guess-counter-' + suffix).textContent = 'سؤال ' + (idx+1) + ' / ' + total;
+  document.getElementById('guess-counter-' + suffix).textContent = 'سؤال ' + (idx+1) + ' / ' + questions.length;
   document.getElementById('guess-score-' + suffix).textContent = 'نقاط: ' + score;
-  document.getElementById('guess-hint-' + suffix).textContent = q.hint;
-  document.getElementById('guess-name-' + suffix).textContent = q.name;
-  document.getElementById('guess-answer-' + suffix).style.display = 'none';
+  const hints = Array.isArray(q.hints) ? q.hints : [q.hint || q.hints];
+  const hintIdx = guessState.hintIdx || 0;
+  const visible = hints.slice(0, hintIdx + 1);
+  const hintEl = document.getElementById('guess-hint-' + suffix);
+  if (hintEl) hintEl.innerHTML = visible.map((h, i) =>
+    '<div style="padding:8px 12px;background:rgba(255,255,255,.05);border-radius:10px;margin-bottom:6px;text-align:right;direction:rtl"><span style="color:var(--yellow);font-weight:900">هنت ' + (i+1) + ': </span>' + h + '</div>'
+  ).join('');
+  const nameEl = document.getElementById('guess-name-' + suffix);
+  if (nameEl) nameEl.textContent = q.name;
+  const ansEl = document.getElementById('guess-answer-' + suffix);
+  if (ansEl) ansEl.style.display = 'none';
+  const moreBtn = document.getElementById('guess-more-hint-' + suffix);
+  if (moreBtn) moreBtn.style.display = hintIdx < hints.length - 1 ? 'block' : 'none';
 }
 
 window.showNextHint = function(mode) {
@@ -3127,6 +3137,7 @@ window.showGuessAnswer = function(mode) {
 window.guessNext = function(mode, correct) {
   if (correct) guessState.score++;
   guessState.idx++;
+  guessState.hintIdx = 0;
   if (guessState.idx >= guessState.questions.length) {
     showGuessEnd();
   } else {
@@ -3239,16 +3250,15 @@ window.goHome = () => showScreen('home');
 
 <div class="screen" id="screen-min_el_la3eb-game">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
-    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-la3eb">سؤال 1 / 50</div>
+    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-la3eb">سؤال 1 / 10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="guess-score-la3eb">نقاط: 0</div>
   </div>
-  <div class="card" style="min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px">
-    <div style="font-size:.82rem;color:var(--sub);font-weight:800">🔍 الهنت</div>
-    <div id="guess-hint-la3eb" style="font-weight:800;font-size:1rem;line-height:1.7;color:var(--text)">—</div>
+  <div class="card" style="width:100%;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px">
+    <div style="font-size:.82rem;color:var(--sub);font-weight:800">🔍 الهنتات</div>
+    <div id="guess-hint-la3eb" style="width:100%;text-align:right;direction:rtl"></div>
   </div>
-  <div style="display:flex;gap:10px;width:100%">
-    <button class="btn btn-primary" style="flex:1" onclick="window.showGuessAnswer('min_el_la3eb')">👁️ عرض الإجابة</button>
-  </div>
+  <button id="guess-more-hint-la3eb" class="btn btn-ghost" style="width:100%;border-color:rgba(255,230,0,.4);color:var(--yellow)" onclick="window.showNextHint('min_el_la3eb')">💡 هنت تاني</button>
+  <button class="btn btn-primary" style="width:100%" onclick="window.showGuessAnswer('min_el_la3eb')">👁️ عرض الإجابة</button>
   <div id="guess-answer-la3eb" style="display:none;width:100%">
     <div class="card" style="text-align:center;background:rgba(0,255,136,.08);border-color:rgba(0,255,136,.3)">
       <div style="font-size:2rem;margin-bottom:8px">⚽</div>
@@ -3275,16 +3285,15 @@ window.goHome = () => showScreen('home');
 
 <div class="screen" id="screen-min_el_massel-game">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
-    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-massel">سؤال 1 / 50</div>
+    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-massel">سؤال 1 / 10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="guess-score-massel">نقاط: 0</div>
   </div>
-  <div class="card" style="min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px">
-    <div style="font-size:.82rem;color:var(--sub);font-weight:800">🔍 الهنت</div>
-    <div id="guess-hint-massel" style="font-weight:800;font-size:1rem;line-height:1.7;color:var(--text)">—</div>
+  <div class="card" style="width:100%;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px">
+    <div style="font-size:.82rem;color:var(--sub);font-weight:800">🔍 الهنتات</div>
+    <div id="guess-hint-massel" style="width:100%;text-align:right;direction:rtl"></div>
   </div>
-  <div style="display:flex;gap:10px;width:100%">
-    <button class="btn btn-primary" style="flex:1" onclick="window.showGuessAnswer('min_el_massel')">👁️ عرض الإجابة</button>
-  </div>
+  <button id="guess-more-hint-massel" class="btn btn-ghost" style="width:100%;border-color:rgba(255,230,0,.4);color:var(--yellow)" onclick="window.showNextHint('min_el_massel')">💡 هنت تاني</button>
+  <button class="btn btn-primary" style="width:100%" onclick="window.showGuessAnswer('min_el_massel')">👁️ عرض الإجابة</button>
   <div id="guess-answer-massel" style="display:none;width:100%">
     <div class="card" style="text-align:center;background:rgba(156,39,176,.08);border-color:rgba(156,39,176,.3)">
       <div style="font-size:2rem;margin-bottom:8px">🎭</div>
