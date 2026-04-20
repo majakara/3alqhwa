@@ -2990,17 +2990,16 @@ window.submitOrder = async function() {
 
     // حفظ في Google Sheets تلقائياً
     try {
-      fetch('https://script.google.com/macros/s/AKfycbwcz017fNs-6NmjP0AXVPkUib5A5sLgLADlmE27CbSZLTQ53YR8eKGbs69a-Ppc4fiy3Q/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({
-          name: name,
-          address: address,
-          phone: phone,
-          notes: notes || '',
-          date: new Date().toLocaleString('ar-EG')
-        })
+      const sheetParams = new URLSearchParams({
+        name: name,
+        address: address,
+        phone: phone,
+        notes: notes || '',
+        date: new Date().toLocaleString('ar-EG')
+      });
+      fetch('https://script.google.com/macros/s/AKfycbwcz017fNs-6NmjP0AXVPkUib5A5sLgLADlmE27CbSZLTQ53YR8eKGbs69a-Ppc4fiy3Q/exec?' + sheetParams.toString(), {
+        method: 'GET',
+        mode: 'no-cors'
       });
     } catch(e) {}
 
