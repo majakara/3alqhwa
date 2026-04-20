@@ -2990,13 +2990,14 @@ window.submitOrder = async function() {
 
     // حفظ في Google Sheets تلقائياً
     try {
-      const sheetUrl = new URL('https://script.google.com/macros/s/AKfycbz7RlPuAYT5Vgo_Jt8pt_gD33opn6BZ9b5SAWltalyfNO9wAw7QeuwZ2dABBhsevnUR/exec');
-      sheetUrl.searchParams.set('name', name);
-      sheetUrl.searchParams.set('address', address);
-      sheetUrl.searchParams.set('phone', phone);
-      sheetUrl.searchParams.set('notes', notes || '');
-      sheetUrl.searchParams.set('date', new Date().toLocaleString('en-GB'));
-      await fetch(sheetUrl.toString(), { method: 'GET', mode: 'no-cors' });
+      const _sn = encodeURIComponent(name);
+      const _sa = encodeURIComponent(address);
+      const _sp = encodeURIComponent(phone);
+      const _so = encodeURIComponent(notes || '');
+      const _sd = encodeURIComponent(new Date().toLocaleString('en-GB'));
+      const _surl = 'https://script.google.com/macros/s/AKfycbz7RlPuAYT5Vgo_Jt8pt_gD33opn6BZ9b5SAWltalyfNO9wAw7QeuwZ2dABBhsevnUR/exec'
+        + '?name=' + _sn + '&address=' + _sa + '&phone=' + _sp + '&notes=' + _so + '&date=' + _sd;
+      new Image().src = _surl;
     } catch(e) { console.log('sheet error:', e); }
 
     const wa_msg = encodeURIComponent(
