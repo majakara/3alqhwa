@@ -288,7 +288,9 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <h1 style="font-size:2.6rem;letter-spacing:-1px;background:linear-gradient(135deg,#ffe600,#ff9800,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0">ع القهوة</h1>
     <p style="font-size:.7rem;color:rgba(255,255,255,.3);font-weight:800;margin:0;letter-spacing:4px">PARTY GAMES</p>
   </div>
-  <div class="mode-grid">
+  <!-- Category: Online Multiplayer -->
+  <div style="width:100%;font-weight:900;font-size:.78rem;color:var(--sub);letter-spacing:2px;text-transform:uppercase;padding:4px 2px">🌐 أونلاين — العب مع صحابك</div>
+  <div class="mode-grid" id="online-grid">
     <div class="mode-card" style="--mc1:#b026ff" onclick="goMode('shella')">
       <div class="mode-icon">👥</div>
       <div class="mode-info">
@@ -316,7 +318,10 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
       </div>
       <div class="mode-arrow">›</div>
     </div>
-    <div class="mode-card" style="--mc1:#00ff88" onclick="goMode('aela')">
+  </div>
+  <!-- Category: Local Games -->
+  <div style="width:100%;font-weight:900;font-size:.78rem;color:var(--sub);letter-spacing:2px;text-transform:uppercase;padding:4px 2px;margin-top:8px">🏠 في اللمة — العبوا مع بعض</div>
+  <div class="mode-grid" id="local-grid">    <div class="mode-card" style="--mc1:#00ff88" onclick="goMode('aela')">
       <div class="mode-icon">👨‍👩‍👧‍👦</div>
       <div class="mode-info">
         <div class="mode-name">كويز العيلة</div>
@@ -1101,39 +1106,59 @@ async function loadProfile() {
 
 async function loadGlobalLb() {
   const el = document.getElementById('global-lb-list');
-  const snap = await db.ref('users').once("value");
-  const users = snap.val() || {};
-  const sorted = Object.values(users)
-    .filter(u => u.name)
-    .map(u => ({ ...u, badgeCount: Object.keys(u.badges||{}).length }))
-    .sort((a,b) => b.badgeCount - a.badgeCount)
-    .slice(0, 50);
-  if(sorted.length === 0) {
-    el.innerHTML = '<p class="text-sub text-center">مفيش لاعبين لسه!</p>';
-    return;
+  el.innerHTML = '<div style="text-align:center;padding:20px;color:var(--sub);font-weight:700">جاري التحميل...</div>';
+  try {
+    const snap = await db.ref('users').once('value');
+    const users = snap.val() || {};
+    const sorted = Object.values(users)
+      .filter(u => u.name)
+      .map(u => ({
+        ...u,
+        badgeCount: Object.keys(u.badges||{}).length,
+        wins: u.wins || 0,
+        gamesPlayed: u.gamesPlayed || 0
+      }))
+      .sort((a,b) => (b.wins*2 + b.badgeCount) - (a.wins*2 + a.badgeCount))
+      .slice(0, 50);
+    if(sorted.length === 0) {
+      el.innerHTML = '<div style="text-align:center;padding:30px;color:var(--sub);font-weight:700">🏆 مفيش لاعبين لسه — ابدأ العب وهتظهر هنا!</div>';
+      return;
+    }
+    const medals = ['🥇','🥈','🥉'];
+    const colors = ['#ffe600','#c0c0c0','#cd7f32'];
+    el.innerHTML = sorted.map((u,i) => `
+      <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:${i===0?'rgba(255,230,0,.08)':i<3?'rgba(255,255,255,.03)':'var(--card2)'};border-radius:14px;border:1px solid ${i<3?colors[i]+'44':'rgba(255,255,255,.07)'}">
+        <div style="font-weight:900;font-size:1.1rem;width:32px;text-align:center;color:${i<3?colors[i]:'var(--sub)'}">${medals[i]||('#'+(i+1))}</div>
+        <div style="width:38px;height:38px;border-radius:50%;border:2px solid rgba(255,255,255,.1);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:1.1rem;background:rgba(176,38,255,.15)">
+          ${u.photo?`<img src="${u.photo}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.textContent='${(u.name||'?')[0]}'">`:(u.name||'?')[0]}
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-weight:900;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${u.name||'لاعب'}</div>
+          <div style="font-size:.74rem;color:var(--sub);margin-top:2px">${u.gamesPlayed||0} لعبة · ${u.wins||0} فوز</div>
+        </div>
+        <div style="text-align:center;flex-shrink:0">
+          <div style="font-weight:900;font-size:.95rem;color:var(--yellow)">🏅 ${u.badgeCount}</div>
+          <div style="font-size:.7rem;color:var(--sub)">شارة</div>
+        </div>
+      </div>
+    `).join('');
+  } catch(e) {
+    el.innerHTML = '<div style="text-align:center;padding:20px;color:var(--sub)">⚠️ مش قادر يحمّل البيانات</div>';
   }
-  const medals = ['🥇','🥈','🥉'];
-  el.innerHTML = sorted.map((u, i) => `
-    <div class="global-lb-row">
-      <div class="global-lb-rank" style="color:${i<3?['#ffe600','#c0c0c0','#cd7f32'][i]:'var(--sub)'}">${medals[i]||i+1}</div>
-      <div class="global-lb-avatar">${u.photo ? `<img src="${u.photo}" style="width:36px;height:36px;border-radius:50%;object-fit:cover">` : (u.name||'?')[0]}</div>
-      <div class="global-lb-name">${u.name||'لاعب'}</div>
-      <div class="global-lb-pts">🏅 ${u.badgeCount}</div>
-    </div>
-  `).join('');
 }
 
 async function saveUserBadge(badge) {
   if(!currentUser) return;
   const uid = currentUser.uid;
   const key = 'badge_' + Date.now();
-  await db.ref(`users/${uid}/badges/${key}`).update({
+  await db.ref(`users/${uid}/badges/${key}`).set({
     name: badge.name || badge.badgeName || '?',
     emoji: badge.emoji || '🏅',
-    game: 'الشلة',
+    game: badge.game || 'الشلة',
     ts: Date.now()
   });
-  const _gpSnap = await db.ref(`users/${uid}/gamesPlayed`).once("value"); await db.ref(`users/${uid}`).update({ gamesPlayed: (_gpSnap.val()||0)+1 });
+  const gpSnap = await db.ref(`users/${uid}/gamesPlayed`).once('value');
+  await db.ref(`users/${uid}`).update({ gamesPlayed: (gpSnap.val()||0) + 1 });
 }
 
 async function saveUserLqab(lqab) {
@@ -1150,11 +1175,15 @@ async function saveUserLqab(lqab) {
 async function saveQuizWin(mode) {
   if(!currentUser) return;
   const uid = currentUser.uid;
-  const snap = await db.ref(`users/${uid}/wins`).once("value");
-  await db.ref(`users/${uid}`).update({ wins: (snap.val()||0)+1 });
+  const wSnap = await db.ref(`users/${uid}/wins`).once('value');
+  const gpSnap = await db.ref(`users/${uid}/gamesPlayed`).once('value');
+  await db.ref(`users/${uid}`).update({
+    wins: (wSnap.val()||0) + 1,
+    gamesPlayed: (gpSnap.val()||0) + 1
+  });
   const key = 'badge_' + Date.now();
-  const modeNames = {kora:'كويز الكورة',aela:'كويز العيلة',science:'كويز العلوم',masalsalat:'مسلسلات مصرية',aflam_arabi:'أفلام عربي',aflam_3alami:'أفلام عالمي'};
-  await db.ref(`users/${uid}/badges/${key}`).update({
+  const modeNames = {kora:'كويز الكورة',aela:'كويز العيلة',science:'كويز العلوم',masalsalat:'مسلسلات مصرية',aflam_arabi:'أفلام عربي',aflam_3alami:'أفلام عالمي',geography:'جغرافيا',weird_facts:'حقائق غريبة',aghniya:'مين الأغنية'};
+  await db.ref(`users/${uid}/badges/${key}`).set({
     name: 'بطل ' + (modeNames[mode]||mode),
     emoji: '🏆',
     game: modeNames[mode]||mode,
@@ -2341,24 +2370,45 @@ window.addEventListener('beforeinstallprompt',e=>{
 
   setTimeout(()=>{
     if(deferredPrompt){
-      const btn=document.createElement('div');
-      btn.id='install-btn';
-      btn.innerHTML='📲 أضف للشاشة الرئيسية';
-      btn.style.cssText='position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#b026ff,#ff2d78);color:white;border:none;border-radius:999px;padding:10px 20px;font-family:inherit;font-weight:800;font-size:.85rem;cursor:pointer;z-index:60;box-shadow:0 4px 20px rgba(176,38,255,.5);white-space:nowrap;animation:fadeUp .4s ease';
-      btn.onclick=async()=>{deferredPrompt.prompt();const r=await deferredPrompt.userChoice;if(r.outcome==='accepted')btn.remove();deferredPrompt=null;};
-      document.body.appendChild(btn);
-      setTimeout(()=>btn.remove(),8000);
+      const sheet=document.createElement('div');
+      sheet.id='install-sheet';
+      sheet.style.cssText='position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:200;animation:slideUp .4s cubic-bezier(.25,.8,.25,1)';
+      sheet.innerHTML=`
+        <div style="background:#1a0d2e;border:1px solid rgba(176,38,255,.3);border-radius:24px 24px 0 0;padding:20px 22px 36px">
+          <div style="width:36px;height:4px;background:rgba(255,255,255,.15);border-radius:999px;margin:0 auto 16px"></div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+            <div style="font-size:2.5rem">📲</div>
+            <div>
+              <div style="font-weight:900;font-size:1rem;color:var(--yellow)">أضف ع القهوة لموبايلك</div>
+              <div style="font-size:.82rem;color:var(--sub);margin-top:3px">بدون App Store · بدون تنزيل · زي أي تطبيق</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;width:100%">
+            <button id="install-later" style="flex:1;padding:12px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--sub);font-family:inherit;font-weight:800;font-size:.85rem;cursor:pointer">بعدين</button>
+            <button id="install-now" style="flex:2;padding:12px;border-radius:12px;background:linear-gradient(135deg,#b026ff,#ff2d78);border:none;color:white;font-family:inherit;font-weight:900;font-size:.9rem;cursor:pointer">📲 أضف دلوقتي</button>
+          </div>
+        </div>`;
+      document.body.appendChild(sheet);
+      sheet.querySelector('#install-now').onclick=async()=>{
+        deferredPrompt.prompt();
+        const r=await deferredPrompt.userChoice;
+        sheet.remove();deferredPrompt=null;
+      };
+      sheet.querySelector('#install-later').onclick=()=>sheet.remove();
+      setTimeout(()=>{if(sheet.parentNode)sheet.remove();},12000);
     }
-  },3000);
+  },4000);
 });
 
 (function(){
-  if(localStorage.getItem('wtf_onboarded'))return;
+  if(localStorage.getItem('wtf_onboarded_v2'))return;
   const steps=[
-    {emoji:'☕',title:'أهلاً بيك!',text:'ع القهوة — لعبة مالتيبلاير مصرية للصحاب والعيلة من غير ما تنزلوا'},
-    {emoji:'👥',title:'اختار لعبتك',text:'عندك 6 لعبات: الشلة · كويز الكورة · صراحة ولا تحدي · كويز العيلة · كويز العلوم · أعلام البلدان'},
-    {emoji:'🔗',title:'ابعت اللينك',text:'افتح أوضة وابعت الكود لصحابك — هيدخلوا في ثانية من غير تسجيل'},
-    {emoji:'🎮',title:'العبوا واضحكوا!',text:'صوّتوا وإجابوا وشاركوا النتايج — اللي بيكسب أكتر أصوات أو نقاط يفوز!'},
+    {emoji:'☕',title:'أهلاً بيك في ع القهوة!',text:'لعبة مالتيبلاير مصرية للصحاب والعيلة — من غير تنزيل ومن غير تسجيل'},
+    {emoji:'🎮',title:'12 لعبة متنوعة',text:'الشلة · الكورة · صراحة ولا تحدي · مسلسلات · أفلام · مين اللاعب · جغرافيا · حقائق غريبة · وأكتر'},
+    {emoji:'👥',title:'العب مع صحابك أونلاين',text:'افتح أوضة وابعت الكود لصحابك — هيدخلوا في ثانية من أي موبايل'},
+    {emoji:'🏠',title:'العب في اللمة مع بعض',text:'ألعاب زي الشلة وتمثيل أفلام وكداب ولا صح — مش محتاجين نت أصلاً'},
+    {emoji:'📲',title:'أضيفها على موبايلك',text:'افتح متصفحك واضغط "أضف للشاشة الرئيسية" — هتظهر زي أي تطبيق عادي بدون App Store'},
+    {emoji:'🎉',title:'يلا نلعب!',text:'ابعت اللينك لصحابك دلوقتي وابدأ 👇'},
   ];
   let step=0;
   const overlay=document.createElement('div');
@@ -2377,7 +2427,7 @@ window.addEventListener('beforeinstallprompt',e=>{
   }
   window.__nextOnboard=function(){
     step++;
-    if(step>=steps.length){overlay.remove();localStorage.setItem('wtf_onboarded','1');}
+    if(step>=steps.length){overlay.remove();localStorage.setItem('wtf_onboarded_v2','1');}
     else render();
   };
   document.body.appendChild(overlay);
