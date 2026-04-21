@@ -937,13 +937,6 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
 <script>
 const firebaseConfig={apiKey:"AIzaSyB_o027cEzkPei_45Bve73OujTmYWHXi6c",authDomain:"who-s-that-friend.firebaseapp.com",databaseURL:"https://who-s-that-friend-default-rtdb.firebaseio.com",projectId:"who-s-that-friend",storageBucket:"who-s-that-friend.firebasestorage.app",messagingSenderId:"249282525861",appId:"1:249282525861:web:59373f84b009de43a4eb4c"};
 firebase.initializeApp(firebaseConfig);
-firebase.auth().onAuthStateChanged(user => {
-  if (!user) {
-    firebase.auth().signInAnonymously();
-  } else {
-    window.currentUserReady = true;
-  }
-});
 const db = firebase.database();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
