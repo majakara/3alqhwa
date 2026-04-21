@@ -74,7 +74,7 @@ textarea{resize:none}
 .round-info{font-size:.8rem;color:var(--sub);font-weight:800;background:rgba(255,255,255,.06);padding:4px 12px;border-radius:20px}
 .question-text{font-weight:900;font-size:1.2rem;text-align:center;line-height:1.5;color:var(--text);padding:0 6px}
 .timer-wrap{display:flex;align-items:center;justify-content:center}
-.timer-circle{width:56px;height:56px;border-radius:50%;border:3px solid rgba(255,255,255,.1);background:conic-gradient(var(--pink) var(--pct,100%),rgba(255,255,255,.08) 0);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.25rem;color:var(--pink);transition:all .5s}
+.timer-circle{width:52px;height:52px;border-radius:50%;background:rgba(255,230,0,.15);border:3px solid rgba(255,230,0,.5);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#ffe600;transition:all .5s}
 .progress-dots{display:flex;gap:6px;justify-content:center}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);transition:all .3s}
 .dot.active{background:var(--pink);transform:scale(1.3)}
@@ -397,7 +397,60 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
       </div>
       <div class="mode-arrow">›</div>
     </div>
-  </div>
+    <div class="mode-card" style="--mc1:#4caf50" onclick="goMode('aghniya')">
+      <div class="mode-icon">🎵</div>
+      <div class="mode-info">
+        <div class="mode-name">مين الأغنية؟</div>
+        <div class="mode-desc">كلمات أغنية مصرية — خمّن مين غناها</div>
+        <span class="mode-badge" style="background:rgba(76,175,80,.15);color:#4caf50;border:1px solid rgba(76,175,80,.3)">تخمين · جماعي</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#f44336" onclick="goMode('kdab_sah')">
+      <div class="mode-icon">🤥</div>
+      <div class="mode-info">
+        <div class="mode-name">كداب ولا صح؟</div>
+        <div class="mode-desc">قول حاجة عن نفسك والشلة تحكم</div>
+        <span class="mode-badge" style="background:rgba(244,67,54,.15);color:#f44336;border:1px solid rgba(244,67,54,.3)">اجتماعي · مضحك</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#2196f3" onclick="goMode('geography')">
+      <div class="mode-icon">🌍</div>
+      <div class="mode-info">
+        <div class="mode-name">جغرافيا</div>
+        <div class="mode-desc">أسئلة عن عواصم وبلاد وحقائق</div>
+        <span class="mode-badge" style="background:rgba(33,150,243,.15);color:#2196f3;border:1px solid rgba(33,150,243,.3)">ثقافي · ماتيلير</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#ff5722" onclick="goMode('snap')">
+      <div class="mode-icon">⚡</div>
+      <div class="mode-info">
+        <div class="mode-name">سناب — الأسرع يكسب</div>
+        <div class="mode-desc">صورة تظهر — الأول يعرف يكسب</div>
+        <span class="mode-badge" style="background:rgba(255,87,34,.15);color:#ff5722;border:1px solid rgba(255,87,34,.3)">سرعة · جماعي</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#9c27b0" onclick="goMode('predict')">
+      <div class="mode-icon">🔮</div>
+      <div class="mode-info">
+        <div class="mode-name">توقعات الشلة</div>
+        <div class="mode-desc">مين أكتر واحد يعمل كذا؟ صوتوا</div>
+        <span class="mode-badge" style="background:rgba(156,39,176,.15);color:#9c27b0;border:1px solid rgba(156,39,176,.3)">اجتماعي · جماعي</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#607d8b" onclick="goMode('weird_facts')">
+      <div class="mode-icon">🤯</div>
+      <div class="mode-info">
+        <div class="mode-name">حقائق غريبة</div>
+        <div class="mode-desc">حقيقة غريبة — صح ولا غلط؟</div>
+        <span class="mode-badge" style="background:rgba(96,125,139,.15);color:#90a4ae;border:1px solid rgba(96,125,139,.3)">ثقافي · مضحك</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>  </div>
 
   <!-- ORDER PHYSICAL GAME -->
   <div class="order-box">
@@ -407,8 +460,9 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
       <div>
         <div style="font-weight:900;font-size:1rem;margin-bottom:4px">ع القهوة — الباكدج الكامل</div>
         <div style="font-size:.82rem;color:var(--sub);font-weight:700;line-height:1.6">
-          6 ألعاب في بوكس واحد · 300 كارت<br>
-          الشلة · الكورة · المسلسلات · الأفلام · العيلة · العالمي<br>
+          12 لعبة في بوكس واحد · 600 كارت<br>
+          الشلة · الكورة · صراحة ولا تحدي · مسلسلات · أفلام عربي · أفلام عالمي<br>
+          مين اللاعب · مين الممثل · إيفيهات · تمثيل أفلام · علوم · عيلة<br>
           + شارات ألقاب · العب من غير نت
         </div>
       </div>
@@ -839,6 +893,16 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
       <button onclick="closeChat()" style="background:rgba(255,255,255,.08);border:none;color:var(--sub);border-radius:999px;padding:6px 14px;cursor:pointer;font-family:inherit;font-weight:800">✕ إغلاق</button>
     </div>
     <div id="chat-messages" style="flex:1;overflow-y:auto;max-height:45vh;display:flex;flex-direction:column;gap:8px;padding-right:4px"></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;padding:4px 0">
+      <button onclick="window.sendQuickEmoji('😂')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">😂</button>
+      <button onclick="window.sendQuickEmoji('🔥')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">🔥</button>
+      <button onclick="window.sendQuickEmoji('👏')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">👏</button>
+      <button onclick="window.sendQuickEmoji('😮')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">😮</button>
+      <button onclick="window.sendQuickEmoji('💀')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">💀</button>
+      <button onclick="window.sendQuickEmoji('🎉')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">🎉</button>
+      <button onclick="window.sendQuickEmoji('👀')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">👀</button>
+      <button onclick="window.sendQuickEmoji('❤️')" style="font-size:1.3rem;background:rgba(255,255,255,.06);border:none;border-radius:8px;padding:4px 8px;cursor:pointer">❤️</button>
+    </div>
     <div style="display:flex;gap:8px">
       <input type="text" id="chat-input" placeholder="اكتب رسالة..." maxlength="100" style="flex:1;padding:12px 14px;border-radius:12px;font-size:.95rem" onkeypress="if(event.key==='Enter')sendChat()">
       <button onclick="sendChat()" style="background:linear-gradient(135deg,var(--purple),var(--pink));border:none;color:white;border-radius:12px;padding:12px 16px;cursor:pointer;font-weight:900;font-size:1rem">إرسال</button>
@@ -884,7 +948,14 @@ window._cfg_email = null;
 })();
 
 const AVATARS=['🐶','🦁','🐯','🐻','🦊','🐼','🐨','🐸','🦋','🐙','🦄','🐲','🦅','🐬','🦚'];
-const shuffle=a=>[...a].sort(()=>Math.random()-.5);
+const shuffle=function(a){
+  const arr=[...a];
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+};
 const genCode=()=>{const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';return Array.from({length:6},()=>c[Math.floor(Math.random()*c.length)]).join('')};
 const genPid=()=>'p_'+Date.now()+'_'+Math.random().toString(36).slice(2,6);
 const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1253,6 +1324,193 @@ const TAMSEL_AFLAM_QS = [
   'أريد حلاً','الإرهابي','ضربة معلم','الباطنية','أبو كرتونة',
   'سواق الأتوبيس','الأفوكاتو','ساعة ونص','فول الصين العظيم','عنتر وبيسة',
   'البريء','الزوجة الثانية','حب في الزنزانة','أم العروسة','اللقاء الأخير',
+];
+
+
+// ── مين الأغنية ──
+const AGHNIYA_QS = [
+  {lyrics:'عينيا شافت أحلى من نورها',name:'نور العين',singer:'عمرو دياب'},
+  {lyrics:'أنا مش هنا مش هناك',name:'مش هنا مش هناك',singer:'أحمد حلمي'},
+  {lyrics:'حبيبي يا نور العين',name:'حبيبي يا نور العين',singer:'محمد فؤاد'},
+  {lyrics:'وقفت الدنيا يمين وشمال',name:'وقفت الدنيا',singer:'عبد الحليم حافظ'},
+  {lyrics:'أنا قلبي دليلي',name:'أنا قلبي دليلي',singer:'هدى سلطان'},
+  {lyrics:'تملّيني تملّيني',name:'تملّيني',singer:'عمرو دياب'},
+  {lyrics:'خد قلبي واديني قلبك',name:'خد قلبي',singer:'محمد منير'},
+  {lyrics:'روح روح يا زمان',name:'روح يا زمان',singer:'فيروز'},
+  {lyrics:'يا مسافر وحدك',name:'يا مسافر',singer:'وردة'},
+  {lyrics:'كل ما أقولك بحبك',name:'بحبك',singer:'أنغام'},
+  {lyrics:'أنا باحبك وخايف أقولك',name:'باحبك',singer:'شيرين'},
+  {lyrics:'ليالي الأنس في فيينا',name:'ليالي الأنس',singer:'عبد الحليم حافظ'},
+  {lyrics:'بعيد عنك يا نهار',name:'بعيد عنك',singer:'عادل إمام في فيلم زهايمر'},
+  {lyrics:'يا واد يا تقيل',name:'يا واد يا تقيل',singer:'محمد ثروت'},
+  {lyrics:'يا حبيبي تعالى',name:'يا حبيبي',singer:'نانسي عجرم'},
+  {lyrics:'حاجة غريبة في قلبي',name:'حاجة غريبة',singer:'عمرو دياب'},
+  {lyrics:'أنا عندي حاجة فيا',name:'عندي حاجة فيا',singer:'إيهاب توفيق'},
+  {lyrics:'ست الحبايب',name:'ست الحبايب',singer:'وردة الجزائرية'},
+  {lyrics:'مبروك عليك ستي',name:'مبروك',singer:'حكيم'},
+  {lyrics:'عايزين نعيش',name:'عايزين نعيش',singer:'هاني شاكر'},
+  {lyrics:'طال انتظاري يا حياتي',name:'طال انتظاري',singer:'أم كلثوم'},
+  {lyrics:'الليلة نعمل عيد',name:'نعمل عيد',singer:'تامر حسني'},
+  {lyrics:'أنت عمري',name:'أنت عمري',singer:'أم كلثوم'},
+  {lyrics:'أجمل ما في حياتي',name:'أجمل ما في حياتي',singer:'نجوى كرم'},
+  {lyrics:'دايما معاك',name:'دايما معاك',singer:'كريم محسن'},
+  {lyrics:'بصراحة ما بعرفش ليش',name:'بصراحة',singer:'إليسا'},
+  {lyrics:'يا لهوي ويا لهوي',name:'يا لهوي',singer:'شعبان عبد الرحيم'},
+  {lyrics:'أنا بكره إسرائيل',name:'بكره إسرائيل',singer:'شعبان عبد الرحيم'},
+  {lyrics:'3 دقات على بابك',name:'3 دقات',singer:'تامر حسني'},
+  {lyrics:'يا عيني على الوداع',name:'يا عيني على الوداع',singer:'فايزة أحمد'},
+  {lyrics:'مش عارف أعيش من غيرك',name:'من غيرك',singer:'وائل جسار'},
+  {lyrics:'مهما يكون يا حياتي',name:'مهما',singer:'آمال ماهر'},
+  {lyrics:'بسم الله ما شاء الله',name:'بسم الله',singer:'ديانا حداد'},
+  {lyrics:'على بالي وبالك',name:'على بالي',singer:'شيرين'},
+  {lyrics:'يا ليلة العيد',name:'يا ليلة العيد',singer:'مصطفى قمر'},
+  {lyrics:'أنا مش عارفة ليه',name:'مش عارفة',singer:'شيرين عبد الوهاب'},
+  {lyrics:'تتلألأ تتلألأ',name:'تتلألأ',singer:'تامر عاشور'},
+  {lyrics:'حياتي أنت وعمري',name:'حياتي أنت',singer:'حمادة هلال'},
+  {lyrics:'كل ده كان ليه',name:'كل ده كان ليه',singer:'أم كلثوم'},
+  {lyrics:'بلاش تبوسني',name:'بلاش تبوسني',singer:'روبي'},
+  {lyrics:'أيه اللي بيخليك تفكر',name:'إيه اللي',singer:'عمرو دياب'},
+  {lyrics:'يسعد صباحك',name:'يسعد صباحك',singer:'ديانا حداد'},
+  {lyrics:'ملكيش غيرك',name:'ملكيش غيرك',singer:'صابر الرباعي'},
+  {lyrics:'عشان أنا وانت شايفين نفس الحلم',name:'حلم',singer:'رامي صبري'},
+  {lyrics:'بنت الجيران ولّعت ناراً',name:'بنت الجيران',singer:'سعد الصغير'},
+  {lyrics:'أنتي عارفاني',name:'انتي عارفاني',singer:'روبي'},
+  {lyrics:'نور العين نور العين',name:'نور العين',singer:'عمرو دياب'},
+  {lyrics:'يا صاحبي انت يا صاحبي',name:'يا صاحبي',singer:'محمد عبد الوهاب'},
+  {lyrics:'يا رايح وين تروح',name:'يا رايح',singer:'داحود حسني'},
+  {lyrics:'أنا لو قلت على قد',name:'قد الشوق',singer:'ماجدة'},
+];
+
+// ── كداب ولا صح ──
+const KDAB_SAH_PROMPTS = [
+  'قول حاجة غريبة بتعملها لوحدك',
+  'قول أغرب حاجة حصلتلك في الإجازة',
+  'قول موهبة مخفية عندك',
+  'قول أكبر كدبة قلتها',
+  'قول حاجة خايف تقولها عادةً',
+  'قول أغرب حاجة أكلتها في حياتك',
+  'قول حلم عجيب اتحلمته',
+  'قول حاجة مش متوقع الناس تعرفها عنك',
+  'قول أكتر موقف إحراج في حياتك',
+  'قول سر صغير كنت بتخبيه',
+  'قول أغرب خوف عندك',
+  'قول حاجة اتعلمتها من أصغر منك',
+  'قول لقب كان بيتقاللك',
+  'قول حاجة زي الطفل لسه بتعملها',
+  'قول أكتر حاجة أسفت عليها',
+  'قول أغرب سؤال اتسألته في إنترفيو',
+  'قول حاجة عن نفسك ما حدش يصدقها',
+  'قول أغرب هواية حاولت تتعلمها',
+  'قول حاجة بتعملها لما تكون زهقان',
+  'قول أغرب حاجة طلبتها من ربنا',
+];
+
+// ── جغرافيا ──
+const GEOGRAPHY_QS = [
+  {q:'عاصمة أستراليا إيه؟',opts:['سيدني','ملبورن','كانبرا','بريسبان'],ans:2,src:'Britannica'},
+  {q:'أطول نهر في العالم إيه؟',opts:['الأمازون','النيل','المسيسيبي','اليانغتسي'],ans:1,src:'Britannica'},
+  {q:'أي بلد فيها أكتر سكان في العالم؟',opts:['الهند','الصين','أمريكا','إندونيسيا'],ans:0,src:'World Bank 2024'},
+  {q:'أصغر دولة في العالم؟',opts:['موناكو','الفاتيكان','سان مارينو','ليختنشتاين'],ans:1,src:'Britannica'},
+  {q:'عاصمة البرازيل إيه؟',opts:['ريو دي جانيرو','ساو باولو','برازيليا','سالفادور'],ans:2,src:'Britannica'},
+  {q:'القارة الأكبر في العالم إيه؟',opts:['أفريقيا','أمريكا الشمالية','آسيا','أوروبا'],ans:2,src:'Britannica'},
+  {q:'بحيرة فيكتوريا في أنهي قارة؟',opts:['آسيا','أمريكا','أفريقيا','أوروبا'],ans:2,src:'Britannica'},
+  {q:'أعلى قمة في العالم إيه؟',opts:['K2','إيفرست','كيليمنجارو','مونت بلان'],ans:1,src:'National Geographic'},
+  {q:'عاصمة كندا إيه؟',opts:['تورنتو','فانكوفر','مونتريال','أوتاوا'],ans:3,src:'Britannica'},
+  {q:'أنهي دولة عندها أكبر مساحة في العالم؟',opts:['الصين','كندا','روسيا','أمريكا'],ans:2,src:'Britannica'},
+  {q:'البحر الميت في أنهي بلد؟',opts:['مصر','الأردن وإسرائيل','لبنان','سوريا'],ans:1,src:'Britannica'},
+  {q:'عاصمة اليابان إيه؟',opts:['أوساكا','كيوتو','طوكيو','ناغويا'],ans:2,src:'Britannica'},
+  {q:'نهر الأمازون في أنهي قارة؟',opts:['أفريقيا','آسيا','أمريكا الجنوبية','أمريكا الشمالية'],ans:2,src:'Britannica'},
+  {q:'أكبر صحراء في العالم إيه؟',opts:['الصحراء الكبرى','صحراء غوبي','الصحراء العربية','أنتاركتيكا'],ans:3,src:'National Geographic'},
+  {q:'عاصمة المكسيك إيه؟',opts:['غوادالاخارا','مونتيري','مكسيكو سيتي','تيخوانا'],ans:2,src:'Britannica'},
+  {q:'أي محيط الأكبر في العالم؟',opts:['الأطلسي','الهندي','الهادي','القطبي'],ans:2,src:'NOAA'},
+  {q:'عاصمة تركيا إيه؟',opts:['إسطنبول','إزمير','أنقرة','بورصة'],ans:2,src:'Britannica'},
+  {q:'أنهي دولة عندها أكتر أهرامات في العالم؟',opts:['مصر','السودان','المكسيك','البيرو'],ans:1,src:'National Geographic'},
+  {q:'نهر الدانوب بيمشي في كام دولة؟',opts:['5','8','10','12'],ans:2,src:'Britannica'},
+  {q:'عاصمة النرويج إيه؟',opts:['برغن','أوسلو','ستافنغر','تروندهايم'],ans:1,src:'Britannica'},
+  {q:'أي دولة عربية الأكبر مساحةً؟',opts:['السعودية','الجزائر','السودان','ليبيا'],ans:1,src:'Arab League'},
+  {q:'بحر قزوين بحيرة ولا بحر؟',opts:['بحر','بحيرة','مضيق','خليج'],ans:1,src:'Britannica'},
+  {q:'عاصمة أثيوبيا إيه؟',opts:['نيروبي','لاغوس','أديس أبابا','القاهرة'],ans:2,src:'Britannica'},
+  {q:'جبل كيليمنجارو في أنهي دولة؟',opts:['كينيا','رواندا','تنزانيا','أوغندا'],ans:2,src:'National Geographic'},
+  {q:'عاصمة أرجنتينا إيه؟',opts:['ساو باولو','ليما','بوينس آيرس','سانتياغو'],ans:2,src:'Britannica'},
+  {q:'قناة السويس بتوصل بين أنهي بحرين؟',opts:['الأحمر والعربي','الأبيض والأحمر','الأبيض والعربي','الأحمر والهندي'],ans:1,src:'SCA'},
+  {q:'عاصمة النيجر إيه؟',opts:['أبوجا','نيامي','نيروبي','أكرا'],ans:1,src:'Britannica'},
+  {q:'أنهي دولة اسمها الرسمي جمهورية الصين الشعبية؟',opts:['تايوان','الصين','هونغ كونغ','تبت'],ans:1,src:'UN'},
+  {q:'بحيرة تيتيكاكا في أنهي قارة؟',opts:['آسيا','أفريقيا','أمريكا الجنوبية','أوروبا'],ans:2,src:'Britannica'},
+  {q:'عاصمة إندونيسيا الجديدة إيه؟',opts:['جاكرتا','بالي','نوسانتارا','سورابايا'],ans:2,src:'BBC 2024'},
+  {q:'أي نهر بيمشي في مصر من الجنوب للشمال؟',opts:['الأمازون','الفولغا','النيل','نهر الكونغو'],ans:2,src:'Britannica'},
+  {q:'عاصمة المغرب إيه؟',opts:['الدار البيضاء','فاس','مراكش','الرباط'],ans:3,src:'Britannica'},
+  {q:'جزر المالديف في أنهي محيط؟',opts:['الأطلسي','الهادي','الهندي','القطبي الجنوبي'],ans:2,src:'Britannica'},
+  {q:'أكبر دولة في أفريقيا مساحةً؟',opts:['نيجيريا','الكونغو','الجزائر','ليبيا'],ans:2,src:'African Union'},
+  {q:'عاصمة سويسرا إيه؟',opts:['زيوريخ','جنيف','لوزان','برن'],ans:3,src:'Swiss Confederation'},
+  {q:'أنهي مدينة مصرية الأكبر مساحةً؟',opts:['القاهرة','الإسكندرية','أسوان','الجيزة'],ans:0,src:'CAPMAS'},
+  {q:'نهر الفولغا في أنهي دولة؟',opts:['أوكرانيا','روسيا','كازاخستان','بولندا'],ans:1,src:'Britannica'},
+  {q:'عاصمة بيرو إيه؟',opts:['بوغوتا','ليما','لاباز','كيتو'],ans:1,src:'Britannica'},
+  {q:'أعمق بحيرة في العالم إيه؟',opts:['بحيرة سوبيريور','بحيرة بايكال','بحيرة تنجانيقا','بحيرة ميشيغان'],ans:1,src:'National Geographic'},
+  {q:'عاصمة كوريا الجنوبية إيه؟',opts:['بوسان','سيول','إنتشيون','دايغو'],ans:1,src:'Britannica'},
+  {q:'أطول سور في العالم إيه؟',opts:['سور الصين العظيم','سور أدريان','سور برلين','سور تيودوسيوس'],ans:0,src:'UNESCO'},
+  {q:'أنهي محيط أصغر محيطات العالم؟',opts:['الأطلسي','الهندي','القطبي الشمالي','الهادي'],ans:2,src:'NOAA'},
+  {q:'عاصمة الفلبين إيه؟',opts:['سيبو','مانيلا','داباو','زامبوانغا'],ans:1,src:'Britannica'},
+  {q:'جبال الأنديز في أنهي قارة؟',opts:['آسيا','أفريقيا','أمريكا الشمالية','أمريكا الجنوبية'],ans:3,src:'National Geographic'},
+  {q:'عاصمة فنلندا إيه؟',opts:['ستوكهولم','أوسلو','هلسنكي','كوبنهاغن'],ans:2,src:'Britannica'},
+  {q:'نهر الراين في أنهي دولة أوروبية؟',opts:['ألمانيا فقط','فرنسا فقط','ألمانيا وسويسرا وهولندا وغيرها','إيطاليا'],ans:2,src:'Britannica'},
+  {q:'أكتر مدينة في العالم سكاناً؟',opts:['شنغهاي','طوكيو','دلهي','القاهرة'],ans:1,src:'UN 2024'},
+  {q:'عاصمة أوكرانيا إيه؟',opts:['خاركيف','أوديسا','كييف','لفيف'],ans:2,src:'Britannica'},
+  {q:'أنهي دولة عندها أكتر جزر في العالم؟',opts:['اليابان','إندونيسيا','السويد','الفلبين'],ans:1,src:'National Geographic'},
+  {q:'عاصمة إيران إيه؟',opts:['مشهد','أصفهان','شيراز','طهران'],ans:3,src:'Britannica'},
+];
+
+// ── حقائق غريبة ──
+const WEIRD_FACTS_QS = [
+  {fact:'الأخطبوط عنده 3 قلوب',isTrue:true,src:'National Geographic'},
+  {fact:'الأسماك بتنام بعيون مفتوحة',isTrue:true,src:'Scientific American'},
+  {fact:'البصل بيعمل دموع لأنه بيطلق غاز سام',isTrue:true,src:'ACS'},
+  {fact:'الفيل الوحيد حيوان ما يقدرش يقفز',isTrue:true,src:'National Geographic'},
+  {fact:'الشمس أكبر من الأرض بمليون مرة',isTrue:true,src:'NASA'},
+  {fact:'الدم في جسم الإنسان لو اتحط في حوض هيملاه',isTrue:false,src:'Medical Facts'},
+  {fact:'الحلزون بيقدر ينام 3 سنين متتالية',isTrue:true,src:'Scientific American'},
+  {fact:'التمساح ما يقدرش يخرج لسانه',isTrue:true,src:'National Geographic'},
+  {fact:'أصابع الإنسان ما فيهاش عضلات',isTrue:true,src:'Medical Anatomy'},
+  {fact:'النجوم بتموت وبتولد كل يوم',isTrue:true,src:'NASA'},
+  {fact:'الذهب موجود في مياه البحر',isTrue:true,src:'NOAA'},
+  {fact:'الببغاء بيقدر يعيش أكتر من الإنسان',isTrue:true,src:'Guinness Records'},
+  {fact:'اللغة المصرية القديمة اتكتبت من الشمال لليمين دايماً',isTrue:false,src:'Egyptology'},
+  {fact:'الفراولة مش فاكهة من الناحية العلمية',isTrue:true,src:'Botanica'},
+  {fact:'الأوكتوبوس بيقدر يفتح براطيم الزجاجات',isTrue:true,src:'Scientific American'},
+  {fact:'الشمبانزي أذكى من كل الحيوانات',isTrue:false,src:'Animal Cognition Research'},
+  {fact:'الجمل بيخزن ماء في سنامه',isTrue:false,src:'National Geographic'},
+  {fact:'الكاكاو الأصلي مرّ مش حلو',isTrue:true,src:'Food History'},
+  {fact:'كلمة قهوة أصلها تركي',isTrue:false,src:'Etymology'},
+  {fact:'القطط بترى بالظلام الكامل',isTrue:false,src:'Veterinary Science'},
+  {fact:'السمكة الذهبية عندها ذاكرة 3 ثواني بس',isTrue:false,src:'Scientific American'},
+  {fact:'الصرصار بيقدر يعيش أسبوع من غير راس',isTrue:true,src:'Entomology'},
+  {fact:'الصوت أسرع من الضوء',isTrue:false,src:'Physics'},
+  {fact:'مصر الدولة العربية الأكبر مساحةً',isTrue:false,src:'Arab League'},
+  {fact:'الأرض مش دايرة تماماً هي أكتر مسطحة عند القطبين',isTrue:true,src:'NASA'},
+  {fact:'الكلاب بتشوف ألوان زي البني والأزرق',isTrue:true,src:'Veterinary Science'},
+  {fact:'المخ 90٪ ماء',isTrue:false,src:'Neuroscience'},
+  {fact:'النحلة بتموت بعد ما تلسع مرة واحدة',isTrue:true,src:'Entomology'},
+  {fact:'البطريق بيطير في الماء',isTrue:true,src:'Ornithology'},
+  {fact:'الديناصورات عاشت مع البشر',isTrue:false,src:'Paleontology'},
+  {fact:'مصر عندها حدود مع 7 دول',isTrue:false,src:'Egyptian Government'},
+  {fact:'الحيتان بتغني عشان تتواصل',isTrue:true,src:'Marine Biology'},
+  {fact:'الكمبيوتر الأول كان بحجم أوضة كاملة',isTrue:true,src:'Computer History'},
+  {fact:'الشوكولاتة سامة للكلاب',isTrue:true,src:'AVMA'},
+  {fact:'لون الدم الإنساني دايماً أحمر',isTrue:true,src:'Medical Facts'},
+  {fact:'الفطر مملكة منفصلة مش نبات ومش حيوان',isTrue:true,src:'Biology'},
+  {fact:'الذكاء الاصطناعي أذكى من الإنسان في كل الأمور',isTrue:false,src:'AI Research'},
+  {fact:'الكيكة الشوكولاتة ممكن تكون بيضاء اللون',isTrue:true,src:'Food Science'},
+  {fact:'الثلج الأبيض دايماً أنقى من الثلج الملون',isTrue:false,src:'Environmental Science'},
+  {fact:'الليمون فيه سكر أكتر من الفراولة',isTrue:true,src:'Nutrition Science'},
+  {fact:'الأرنب بيقدر يأكل برازه الأخضر طوعاً',isTrue:true,src:'Veterinary Science'},
+  {fact:'الصقر أسرع حيوان في العالم',isTrue:true,src:'Guinness Records'},
+  {fact:'القمر عنده جاذبية زي الأرض بالظبط',isTrue:false,src:'NASA'},
+  {fact:'الطاقة الشمسية الواصلة للأرض في ساعة تكفي العالم كله لسنة',isTrue:true,src:'IEA'},
+  {fact:'أول هاتف اخترعه جراهام بيل في 1876',isTrue:true,src:'History'},
+  {fact:'الأرض الوحيدة كوكب فيه ماء سائل على سطحه',isTrue:true,src:'NASA'},
+  {fact:'الكوبرا أخطر ثعبان في العالم',isTrue:false,src:'WHO'},
+  {fact:'القرش بيغيّر أسنانه طول عمره',isTrue:true,src:'Marine Biology'},
+  {fact:'القهوة بتصحيك أسرع من الماء البارد',isTrue:false,src:'Nutrition Research'},
+  {fact:'الذرة لما تنفجر تبقى بوشار بسبب البخار الجوا',isTrue:true,src:'Food Science'},
 ];
 
 window.goMode=mode=>{if(mode==='shella')showScreen('shella-setup');else if(mode==='kora')showScreen('kora-setup');else if(mode==='saraha')showScreen('saraha-setup');else if(['aela','science','masalsalat','aflam_arabi','aflam_3alami'].includes(mode))showScreen(mode+'-setup');else showScreen('saraha-setup')};
@@ -1725,7 +1983,7 @@ window.openChat=function(){
   document.getElementById('chat-messages').scrollTop=99999;
 };
 window.closeChat=function(){chatState.open=false;document.getElementById('chat-overlay').style.display='none'};
-window.sendChat=async function(){
+window.sendChat=async function(){SFX&&SFX.chat();
   const inp=document.getElementById('chat-input');
   const text=inp.value.trim();if(!text||!chatState.roomPath)return;
   inp.value='';
@@ -3058,6 +3316,220 @@ window.submitOrder = async function() {
   }
 };
 
+
+// ── SOUND EFFECTS ──
+const SFX = {
+  _ctx: null,
+  _get() { if(!this._ctx) this._ctx = new (window.AudioContext||window.webkitAudioContext)(); return this._ctx; },
+  play(freq, dur=0.1, type='sine', vol=0.3) {
+    try {
+      const ctx = this._get();
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = type; o.frequency.value = freq;
+      g.gain.setValueAtTime(vol, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+      o.start(); o.stop(ctx.currentTime + dur);
+    } catch(e) {}
+  },
+  correct()  { this.play(523, 0.08); setTimeout(()=>this.play(659, 0.12), 80); setTimeout(()=>this.play(784, 0.15), 180); },
+  wrong()    { this.play(200, 0.15, 'sawtooth', 0.2); },
+  tick()     { this.play(800, 0.04, 'square', 0.1); },
+  start()    { this.play(440, 0.1); setTimeout(()=>this.play(550, 0.1), 120); },
+  join()     { this.play(600, 0.08); setTimeout(()=>this.play(750, 0.1), 100); },
+  reveal()   { [0,100,200,300].forEach((d,i)=>setTimeout(()=>this.play(400+i*80,0.1),d)); },
+  chat()     { this.play(880, 0.05, 'sine', 0.15); }
+};
+window.SFX = SFX;
+
+
+window.sendQuickEmoji = function(emoji) {
+  const inp = document.getElementById('chat-input');
+  if(inp) { inp.value = emoji; window.sendChat(); }
+  SFX.chat();
+};
+
+// ── مين الأغنية JS ──
+let aghniyaState = {qs:[],idx:0,score:0};
+window.startAghniya = function() {
+  aghniyaState = {qs:shuffle([...AGHNIYA_QS]).slice(0,10), idx:0, score:0};
+  renderAghniya();
+  showScreen('aghniya-game');
+};
+function renderAghniya() {
+  const {qs,idx,score} = aghniyaState;
+  const q = qs[idx];
+  if(!q) { toast('🏆 خلصت! نقاطك: '+score); setTimeout(()=>goHome(),1500); return; }
+  document.getElementById('aghniya-counter').textContent = (idx+1)+'/'+qs.length;
+  document.getElementById('aghniya-score').textContent = score+' نقطة';
+  document.getElementById('aghniya-lyrics').textContent = '"'+q.lyrics+'"';
+  document.getElementById('aghniya-song').textContent = q.name;
+  document.getElementById('aghniya-singer').textContent = '🎤 '+q.singer;
+  document.getElementById('aghniya-answer').style.display = 'none';
+}
+window.showAghniyaAnswer = function() {
+  document.getElementById('aghniya-answer').style.cssText='display:flex;flex-direction:column;gap:10px;width:100%';
+};
+window.aghniyaNext = function(correct) {
+  if(correct) { aghniyaState.score++; SFX&&SFX.correct(); } else { SFX&&SFX.wrong(); }
+  aghniyaState.idx++;
+  renderAghniya();
+};
+
+// ── كداب ولا صح JS ──
+let kdabState = {qs:[],idx:0};
+window.startKdabSah = function() {
+  kdabState = {qs:shuffle([...KDAB_SAH_PROMPTS]).slice(0,10), idx:0};
+  renderKdab();
+  showScreen('kdab_sah-game');
+};
+function renderKdab() {
+  const {qs,idx} = kdabState;
+  if(idx>=qs.length) { toast('🎉 انتهت الجولة!'); setTimeout(()=>goHome(),1500); return; }
+  document.getElementById('kdab-counter').textContent = (idx+1)+'/'+qs.length;
+  document.getElementById('kdab-prompt').textContent = qs[idx];
+}
+window.kdabNext = function() {
+  kdabState.idx++;
+  renderKdab();
+};
+
+// ── جغرافيا JS ──
+let geoState = {qs:[],idx:0,score:0};
+window.startGeography = function() {
+  geoState = {qs:shuffle([...GEOGRAPHY_QS]).slice(0,10), idx:0, score:0};
+  renderGeo();
+  showScreen('geography-game');
+};
+function renderGeo() {
+  const {qs,idx,score} = geoState;
+  const q = qs[idx];
+  if(!q) { toast('🏆 نقاطك: '+score+'/10'); setTimeout(()=>goHome(),1500); return; }
+  document.getElementById('geo-counter').textContent = (idx+1)+'/'+qs.length;
+  document.getElementById('geo-score').textContent = score+' نقطة';
+  document.getElementById('geo-question').textContent = q.q;
+  const optsEl = document.getElementById('geo-opts');
+  const shuffledOpts = q.opts.map((o,i)=>({o,correct:i===q.ans}));
+  optsEl.innerHTML = shuffledOpts.map((opt,i)=>
+    `<button onclick="window.geoAnswer(${i===q.ans?1:0},this)" style="width:100%;padding:14px;border-radius:14px;border:2px solid rgba(255,255,255,.1);background:var(--card2);color:var(--text);font-family:inherit;font-weight:800;font-size:.95rem;cursor:pointer;text-align:right;direction:rtl">${opt.o}</button>`
+  ).join('');
+}
+window.geoAnswer = function(correct, btn) {
+  document.querySelectorAll('#geo-opts button').forEach(b=>b.disabled=true);
+  if(correct) { geoState.score++; btn.style.background='rgba(76,175,80,.3)'; btn.style.borderColor='#4caf50'; SFX&&SFX.correct(); }
+  else { btn.style.background='rgba(244,67,54,.3)'; btn.style.borderColor='#f44336'; SFX&&SFX.wrong(); }
+  setTimeout(()=>{ geoState.idx++; renderGeo(); }, 1000);
+};
+
+// ── حقائق غريبة JS ──
+let wfState = {qs:[],idx:0,score:0};
+window.startWeirdFacts = function() {
+  wfState = {qs:shuffle([...WEIRD_FACTS_QS]).slice(0,10), idx:0, score:0};
+  renderWF();
+  showScreen('weird_facts-game');
+};
+function renderWF() {
+  const {qs,idx,score} = wfState;
+  const q = qs[idx];
+  if(!q) { toast('🏆 نقاطك: '+score+'/10'); setTimeout(()=>goHome(),1500); return; }
+  document.getElementById('wf-counter').textContent = (idx+1)+'/'+qs.length;
+  document.getElementById('wf-score').textContent = score+' نقطة';
+  document.getElementById('wf-fact').textContent = q.fact;
+  document.getElementById('wf-result').style.display = 'none';
+}
+window.showWFAnswer = function(userSaidTrue) {
+  const q = wfState.qs[wfState.idx];
+  const correct = userSaidTrue === q.isTrue;
+  if(correct) { wfState.score++; SFX&&SFX.correct(); } else { SFX&&SFX.wrong(); }
+  const rc = document.getElementById('wf-result-card');
+  const rt = document.getElementById('wf-result-text');
+  const rs = document.getElementById('wf-source');
+  rc.style.background = correct ? 'rgba(76,175,80,.1)' : 'rgba(244,67,54,.1)';
+  rc.style.borderColor = correct ? '#4caf50' : '#f44336';
+  rt.textContent = (q.isTrue ? '✅ صح!' : '❌ غلط!') + ' — ' + q.fact;
+  rt.style.color = q.isTrue ? '#81c784' : '#ef9a9a';
+  rs.textContent = '📚 المصدر: '+q.src;
+  document.getElementById('wf-result').style.display='block';
+};
+window.wfNext = function() { wfState.idx++; renderWF(); };
+
+// ── توقعات الشلة JS ──
+const PREDICT_QS = [
+  'مين أكتر واحد يتأخر على الميعاد؟','مين أول واحد يتجوز في الشلة؟',
+  'مين أكتر واحد بيصرف؟','مين أكتر واحد بيكدب؟',
+  'مين الأذكى في الشلة؟','مين أكتر واحد بيخوف؟',
+  'مين أول واحد هيبقى مشهور؟','مين أكتر واحد بيشكي؟',
+  'مين الأكل محور حياته؟','مين أكتر واحد عنده مواهب مخفية؟',
+  'مين أكتر واحد بيغير رأيه؟','مين لو طلبت منه معروف مش بيرفض؟',
+  'مين أكتر واحد بيعرف أخبار الكل؟','مين الأكثر حظاً في الشلة؟',
+  'مين لو بدأ مشروع هيكمله؟','مين أكتر واحد بيصحى بدري؟',
+];
+let predictState = {qs:[],idx:0};
+window.startPredict = function() {
+  predictState = {qs:shuffle([...PREDICT_QS]).slice(0,10), idx:0};
+  renderPredict();
+  showScreen('predict-game');
+};
+function renderPredict() {
+  const {qs,idx} = predictState;
+  if(idx>=qs.length) { toast('🎉 انتهت الأسئلة!'); setTimeout(()=>goHome(),1500); return; }
+  document.getElementById('predict-counter').textContent = (idx+1)+'/'+qs.length;
+  document.getElementById('predict-q').textContent = qs[idx];
+}
+window.predictNext = function() { predictState.idx++; renderPredict(); };
+
+// ── سناب JS ──
+const SNAP_WORDS = ['قطة','سيارة','شجرة','قلم','باب','نافذة','كتاب','تليفون','كرسي','طاولة',
+  'مطبخ','بنطلون','حذاء','ساعة','مطر','شمس','قمر','نجمة','بحر','جبل',
+  'كوبري','عصفور','فيل','حصان','سمكة','تفاحة','موزة','برتقالة','عنب','فراولة'];
+let snapState = {words:[],idx:0,score:0,active:false};
+window.startSnap = function() {
+  snapState = {words:shuffle([...SNAP_WORDS]).slice(0,10), idx:0, score:0, active:false};
+  showScreen('snap-game');
+  document.getElementById('snap-word').textContent = 'جاهز؟';
+  document.getElementById('snap-start-btn').style.display='block';
+};
+window.snapStart = function() {
+  document.getElementById('snap-start-btn').style.display='none';
+  let count=3;
+  document.getElementById('snap-word').textContent = count;
+  const t = setInterval(()=>{
+    count--;
+    if(count>0) { document.getElementById('snap-word').textContent=count; }
+    else {
+      clearInterval(t);
+      snapState.active = true;
+      document.getElementById('snap-word').textContent = snapState.words[snapState.idx];
+      document.getElementById('snap-card').style.background='rgba(255,152,0,.1)';
+    }
+  }, 1000);
+};
+window.snapHit = function() {
+  if(!snapState.active) return;
+  snapState.score++;
+  snapState.active = false;
+  SFX&&SFX.correct();
+  snapState.idx++;
+  document.getElementById('snap-score').textContent = snapState.score+' نقطة';
+  if(snapState.idx >= snapState.words.length) { toast('🏆 نقاطك: '+snapState.score+'/10'); setTimeout(()=>goHome(),1500); return; }
+  document.getElementById('snap-counter').textContent = (snapState.idx+1)+'/'+snapState.words.length;
+  document.getElementById('snap-word').textContent = 'جاهز؟';
+  document.getElementById('snap-card').style.background='';
+  document.getElementById('snap-start-btn').style.display='block';
+};
+
+// ── Update goMode ──
+window.goMode = function(mode) {
+  const multiModes = ['kora','aela','science','masalsalat','aflam_arabi','aflam_3alami'];
+  const localModes = ['min_el_la3eb','min_el_massel','evehat','tamsel_aflam','aghniya','kdab_sah','geography','weird_facts','predict','snap'];
+  if(mode==='shella') showScreen('shella-setup');
+  else if(mode==='saraha') showScreen('saraha-setup');
+  else if(multiModes.includes(mode)) showScreen(mode+'-setup');
+  else if(localModes.includes(mode)) showScreen(mode+'-setup');
+  else showScreen('home');
+};
+
 console.log('✅ Mega Patch loaded — all features active');
 
 // ── EXPOSE ALL FUNCTIONS TO GLOBAL SCOPE ──
@@ -3383,6 +3855,164 @@ window.goHome = () => showScreen('home');
     <button class="btn btn-primary" style="flex:1;background:linear-gradient(135deg,#e65100,#ff9800);color:white" onclick="window.tamselNext(true)">✅ عرفوا!</button>
   </div>
   <button class="btn btn-ghost" onclick="window.showTamselResults()" style="margin-top:4px">🏆 عرض النتيجة</button>
+</div>
+
+
+<!-- مين الأغنية -->
+<div class="screen" id="screen-aghniya-setup">
+  <div class="back-btn" onclick="goHome()">‹ رجوع</div>
+  <div class="logo"><div class="logo-emoji">🎵</div><h1>مين الأغنية؟</h1></div>
+  <div class="card"><div class="card-title">إزاي تلعب؟</div>
+    <p style="color:var(--sub);font-size:.9rem;line-height:1.7">بتظهر كلمات من أغنية · الكل يخمّن اسم الأغنية أو المطرب · نقطة لكل إجابة صح</p>
+  </div>
+  <button class="btn btn-primary" onclick="window.startAghniya()">🎵 ابدأ</button>
+  <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
+</div>
+<div class="screen" id="screen-aghniya-game">
+  <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
+    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="aghniya-counter">1/10</div>
+    <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="aghniya-score">0 نقطة</div>
+  </div>
+  <div class="card" style="width:100%;text-align:center;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+    <div style="font-size:.8rem;color:var(--sub);font-weight:800">🎵 الكلمات</div>
+    <div id="aghniya-lyrics" style="font-weight:900;font-size:1.1rem;color:var(--yellow);line-height:1.6">—</div>
+  </div>
+  <button class="btn btn-primary" style="width:100%" onclick="window.showAghniyaAnswer()">👁️ عرض الإجابة</button>
+  <div id="aghniya-answer" style="display:none;width:100%;flex-direction:column;gap:10px">
+    <div class="card" style="text-align:center;background:rgba(76,175,80,.08);border-color:rgba(76,175,80,.3)">
+      <div id="aghniya-song" style="font-weight:900;font-size:1.2rem;color:#81c784">—</div>
+      <div id="aghniya-singer" style="font-size:.85rem;color:var(--sub);margin-top:4px">—</div>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-ghost" style="flex:1;color:var(--pink);border-color:rgba(255,45,120,.4)" onclick="window.aghniyaNext(false)">❌ غلط</button>
+      <button class="btn btn-primary" style="flex:1;background:linear-gradient(135deg,#2e7d32,#4caf50);color:white" onclick="window.aghniyaNext(true)">✅ صح</button>
+    </div>
+  </div>
+  <button class="btn btn-ghost" onclick="goHome()" style="margin-top:4px">إنهاء</button>
+</div>
+
+<!-- كداب ولا صح -->
+<div class="screen" id="screen-kdab_sah-setup">
+  <div class="back-btn" onclick="goHome()">‹ رجوع</div>
+  <div class="logo"><div class="logo-emoji">🤥</div><h1>كداب ولا صح؟</h1></div>
+  <div class="card"><div class="card-title">إزاي تلعب؟</div>
+    <p style="color:var(--sub);font-size:.9rem;line-height:1.7">اللاعب الأول بيقرأ الموضوع · بيقول جملة صح أو كداب عن نفسه · الباقيين يصوتوا · لو غلطوا في تخمينه يكسب نقطة</p>
+  </div>
+  <button class="btn btn-primary" onclick="window.startKdabSah()">🤥 ابدأ</button>
+  <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
+</div>
+<div class="screen" id="screen-kdab_sah-game">
+  <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
+    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="kdab-counter">1/10</div>
+  </div>
+  <div class="card" style="width:100%;text-align:center;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
+    <div style="font-size:.8rem;color:var(--sub);font-weight:800">🎯 الموضوع</div>
+    <div id="kdab-prompt" style="font-weight:900;font-size:1.1rem;color:var(--text);line-height:1.6">—</div>
+    <div style="font-size:.85rem;color:var(--yellow);font-weight:800">اللاعب يقول حاجة عن نفسه — صح أو كداب؟</div>
+  </div>
+  <div style="display:flex;gap:10px;width:100%">
+    <button class="btn btn-ghost" style="flex:1;color:var(--pink);border-color:rgba(255,45,120,.4);font-size:1.1rem" onclick="window.kdabNext()">❌ كداب</button>
+    <button class="btn btn-primary" style="flex:1;background:linear-gradient(135deg,#c62828,#f44336);color:white;font-size:1.1rem" onclick="window.kdabNext()">✅ صح</button>
+  </div>
+  <button class="btn btn-ghost" onclick="goHome()" style="margin-top:4px">إنهاء</button>
+</div>
+
+<!-- جغرافيا -->
+<div class="screen" id="screen-geography-setup">
+  <div class="back-btn" onclick="goHome()">‹ رجوع</div>
+  <div class="logo"><div class="logo-emoji">🌍</div><h1>جغرافيا</h1></div>
+  <div class="card"><div class="card-title">إزاي تلعب؟</div>
+    <p style="color:var(--sub);font-size:.9rem;line-height:1.7">10 أسئلة جغرافية · اختار الإجابة الصح · نقطة لكل إجابة صح</p>
+  </div>
+  <button class="btn btn-primary" onclick="window.startGeography()">🌍 ابدأ</button>
+  <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
+</div>
+<div class="screen" id="screen-geography-game">
+  <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
+    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="geo-counter">1/10</div>
+    <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="geo-score">0 نقطة</div>
+  </div>
+  <div class="card" style="width:100%;text-align:center;min-height:120px;display:flex;align-items:center;justify-content:center">
+    <div id="geo-question" style="font-weight:900;font-size:1rem;line-height:1.6">—</div>
+  </div>
+  <div id="geo-opts" style="display:flex;flex-direction:column;gap:10px;width:100%"></div>
+  <button class="btn btn-ghost" onclick="goHome()" style="margin-top:4px">إنهاء</button>
+</div>
+
+<!-- حقائق غريبة -->
+<div class="screen" id="screen-weird_facts-setup">
+  <div class="back-btn" onclick="goHome()">‹ رجوع</div>
+  <div class="logo"><div class="logo-emoji">🤯</div><h1>حقائق غريبة</h1></div>
+  <div class="card"><div class="card-title">إزاي تلعب؟</div>
+    <p style="color:var(--sub);font-size:.9rem;line-height:1.7">بتظهر حقيقة غريبة · اللاعبين يصوتوا صح ولا غلط · بعدين بتتكشف الإجابة · نقطة لكل إجابة صح</p>
+  </div>
+  <button class="btn btn-primary" onclick="window.startWeirdFacts()">🤯 ابدأ</button>
+  <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
+</div>
+<div class="screen" id="screen-weird_facts-game">
+  <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
+    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="wf-counter">1/10</div>
+    <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="wf-score">0 نقطة</div>
+  </div>
+  <div class="card" style="width:100%;text-align:center;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
+    <div style="font-size:.8rem;color:var(--sub);font-weight:800">🤯 الحقيقة</div>
+    <div id="wf-fact" style="font-weight:900;font-size:1rem;line-height:1.6">—</div>
+  </div>
+  <div style="display:flex;gap:10px;width:100%">
+    <button class="btn btn-ghost" style="flex:1;border-color:rgba(255,45,120,.4);color:var(--pink);font-size:1rem" onclick="window.showWFAnswer(false)">❌ غلط</button>
+    <button class="btn btn-primary" style="flex:1;background:linear-gradient(135deg,#1565c0,#2196f3);color:white;font-size:1rem" onclick="window.showWFAnswer(true)">✅ صح</button>
+  </div>
+  <div id="wf-result" style="display:none;width:100%">
+    <div class="card" id="wf-result-card" style="text-align:center">
+      <div id="wf-result-text" style="font-weight:900;font-size:1.2rem"></div>
+      <div id="wf-source" style="font-size:.78rem;color:var(--sub);margin-top:6px"></div>
+    </div>
+    <button class="btn btn-primary" style="width:100%" onclick="window.wfNext()">التالي ›</button>
+  </div>
+  <button class="btn btn-ghost" onclick="goHome()" style="margin-top:4px">إنهاء</button>
+</div>
+
+<!-- توقعات الشلة -->
+<div class="screen" id="screen-predict-setup">
+  <div class="back-btn" onclick="goHome()">‹ رجوع</div>
+  <div class="logo"><div class="logo-emoji">🔮</div><h1>توقعات الشلة</h1></div>
+  <div class="card"><div class="card-title">إزاي تلعب؟</div>
+    <p style="color:var(--sub);font-size:.9rem;line-height:1.7">سؤال عن الشلة · كل واحد يقول رأيه بصوت عالي · مفيش إجابة صح وغلط — التسلية في النقاش</p>
+  </div>
+  <button class="btn btn-primary" onclick="window.startPredict()">🔮 ابدأ</button>
+  <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
+</div>
+<div class="screen" id="screen-predict-game">
+  <div style="font-weight:900;font-size:.9rem;color:var(--sub);width:100%;text-align:left" id="predict-counter">1/10</div>
+  <div class="card" style="width:100%;text-align:center;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+    <div style="font-size:2.5rem">🔮</div>
+    <div id="predict-q" style="font-weight:900;font-size:1.1rem;color:var(--text);line-height:1.6">—</div>
+  </div>
+  <button class="btn btn-primary" style="width:100%" onclick="window.predictNext()">التالي ›</button>
+  <button class="btn btn-ghost" onclick="goHome()">إنهاء</button>
+</div>
+
+<!-- سناب -->
+<div class="screen" id="screen-snap-setup">
+  <div class="back-btn" onclick="goHome()">‹ رجوع</div>
+  <div class="logo"><div class="logo-emoji">⚡</div><h1>سناب</h1></div>
+  <div class="card"><div class="card-title">إزاي تلعب؟</div>
+    <p style="color:var(--sub);font-size:.9rem;line-height:1.7">بتظهر كلمة أو صورة · الأول يضغط الزرار يكسب نقطة · أسرع شلة تكسب</p>
+  </div>
+  <button class="btn btn-primary" onclick="window.startSnap()">⚡ ابدأ</button>
+  <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
+</div>
+<div class="screen" id="screen-snap-game">
+  <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
+    <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="snap-counter">1/10</div>
+    <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="snap-score">0 نقطة</div>
+  </div>
+  <div id="snap-card" class="card" style="width:100%;min-height:220px;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none" onclick="window.snapHit()">
+    <div id="snap-word" style="font-weight:900;font-size:2rem;text-align:center;color:var(--yellow)">جاهز؟</div>
+  </div>
+  <div style="font-size:.85rem;color:var(--sub);text-align:center;font-weight:700">اضغط الكارت لما تظهر الكلمة!</div>
+  <button id="snap-start-btn" class="btn btn-primary" style="width:100%" onclick="window.snapStart()">ابدأ العد التنازلي</button>
+  <button class="btn btn-ghost" onclick="goHome()" style="margin-top:4px">إنهاء</button>
 </div>
 
 </body></html>
