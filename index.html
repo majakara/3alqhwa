@@ -288,13 +288,10 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <h1 style="font-size:2.6rem;letter-spacing:-1px;background:linear-gradient(135deg,#ffe600,#ff9800,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0">ع القهوة</h1>
     <p style="font-size:.7rem;color:rgba(255,255,255,.3);font-weight:800;margin:0;letter-spacing:4px">PARTY GAMES</p>
   </div>
-  <!-- Category: Online Multiplayer -->
-  <!-- Quick Start -->
-  <button onclick="goMode('shella')" style="width:100%;padding:16px;border-radius:18px;border:none;background:linear-gradient(135deg,#b026ff,#ff2d78);color:white;font-family:inherit;font-weight:900;font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(176,38,255,.35)">
+  <button onclick="window.goMode('shella')" style="width:100%;padding:16px;border-radius:18px;border:none;background:linear-gradient(135deg,#b026ff,#ff2d78);color:white;font-family:inherit;font-weight:900;font-size:1rem;cursor:pointer;margin-bottom:4px;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(176,38,255,.35)">
     👥 ابدأ لعب مع صحابك فوراً
   </button>
-  <!-- Online section -->
-  <div style="width:100%;font-weight:900;font-size:.82rem;color:rgba(176,38,255,.8);padding:6px 2px 2px;display:flex;align-items:center;gap:8px"><span style="flex:1;height:1px;background:rgba(176,38,255,.2)"></span>🌐 أونلاين مع صحابك<span style="flex:1;height:1px;background:rgba(176,38,255,.2)"></span></div>
+  <div style="width:100%;display:flex;align-items:center;gap:8px;margin:4px 0"><span style="flex:1;height:1px;background:rgba(176,38,255,.2)"></span><span style="font-size:.75rem;color:rgba(176,38,255,.7);font-weight:800;white-space:nowrap">🌐 أونلاين مع صحابك</span><span style="flex:1;height:1px;background:rgba(176,38,255,.2)"></span></div>
   <div class="mode-grid" id="online-grid">
     <div class="mode-card" style="--mc1:#b026ff" onclick="goMode('shella')">
       <div class="mode-icon">👥</div>
@@ -324,9 +321,7 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
       <div class="mode-arrow">›</div>
     </div>
   </div>
-  <!-- Category: Local Games -->
-  <!-- Local section -->
-  <div style="width:100%;font-weight:900;font-size:.82rem;color:rgba(0,255,136,.7);padding:6px 2px 2px;display:flex;align-items:center;gap:8px"><span style="flex:1;height:1px;background:rgba(0,255,136,.2)"></span>🏠 في اللمة مع بعض<span style="flex:1;height:1px;background:rgba(0,255,136,.2)"></span></div>
+  <div style="width:100%;display:flex;align-items:center;gap:8px;margin:4px 0"><span style="flex:1;height:1px;background:rgba(0,255,136,.2)"></span><span style="font-size:.75rem;color:rgba(0,255,136,.7);font-weight:800;white-space:nowrap">🏠 في اللمة مع بعض</span><span style="flex:1;height:1px;background:rgba(0,255,136,.2)"></span></div>
   <div class="mode-grid" id="local-grid">    <div class="mode-card" style="--mc1:#00ff88" onclick="goMode('aela')">
       <div class="mode-icon">👨‍👩‍👧‍👦</div>
       <div class="mode-info">
@@ -336,7 +331,9 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
       </div>
       <div class="mode-arrow">›</div>
     </div>
-    <div class="mode-card" style="--mc1:#ffe600" onclick="goMode('science')">
+  </div>
+  <div style="width:100%;display:flex;align-items:center;gap:8px;margin:4px 0"><span style="flex:1;height:1px;background:rgba(0,255,136,.2)"></span><span style="font-size:.75rem;color:rgba(0,255,136,.7);font-weight:800;white-space:nowrap">🏠 في اللمة مع بعض</span><span style="flex:1;height:1px;background:rgba(0,255,136,.2)"></span></div>
+  <div class="mode-grid">    <div class="mode-card" style="--mc1:#ffe600" onclick="goMode('science')">
       <div class="mode-icon">🔬</div>
       <div class="mode-info">
         <div class="mode-name">كويز العلوم</div>
@@ -624,7 +621,7 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <div class="card-title">🎖️ مجموعة الشارات</div>
     <div id="final-player-cards" style="display:flex;flex-direction:column;gap:12px"></div>
   </div>
-  <div id="play-again-btn" style="display:none;width:100%;flex-direction:column;gap:10px">
+  <div id="play-again-btn" style="display:none;flex-direction:column;gap:10px;width:100%">
     <button class="btn btn-primary" onclick="playAgain()" style="width:100%;background:linear-gradient(135deg,#b026ff,#ff2d78)">🔄 العب تاني مع نفس الشلة</button>
     <button class="btn btn-ghost" onclick="goHome()" style="width:100%;border-color:rgba(0,255,136,.4);color:var(--green)">🎮 روم جديد من الهوم</button>
     <button class="btn btn-danger" onclick="leaveGame()" style="width:100%">🚪 اخرج</button>
@@ -657,7 +654,7 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <div class="card-title">📋 كود الأوضة</div>
     <div class="room-code-box" onclick="koraFn.copyLink()">
       <div class="room-code" id="kora-lobby-code">----</div>
-      <div class="room-code-hint">اضغط لنسخ اللينك وابعته للصحاب 🔗</div>
+      <div class="room-code-hint">اضغط لنسخ الكود وابعته للصحاب 🔗</div>
     </div>
   </div>
   <div class="card">
@@ -795,7 +792,7 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <div class="card-title">📋 كود الأوضة</div>
     <div class="room-code-box" onclick="gquizFn.copyLink()">
       <div class="room-code" id="gquiz-lobby-code">----</div>
-      <div class="room-code-hint">اضغط لنسخ اللينك وابعته للصحاب 🔗</div>
+      <div class="room-code-hint">اضغط لنسخ الكود وابعته للصحاب 🔗</div>
     </div>
   </div>
   <div class="card">
@@ -982,17 +979,10 @@ const dbSet=async(p,v)=>db.ref(p).set(v);
 const dbUpdate=async(p,v)=>db.ref(p).update(v);
 const dbListen=(p,cb)=>{const r=db.ref(p);r.on("value",s=>cb(s.exists()?s.val():null));return()=>r.off()};
 
-let _audioCtx=null;
-function _getAudioCtx(){
-  if(!_audioCtx||_audioCtx.state==='closed'){
-    _audioCtx=new(window.AudioContext||window.webkitAudioContext)();
-  }
-  if(_audioCtx.state==='suspended')_audioCtx.resume();
-  return _audioCtx;
-}
-// Unlock audio on first touch
-document.addEventListener('touchstart',function _unlock(){_getAudioCtx();document.removeEventListener('touchstart',_unlock);},{once:true,passive:true});
-function playSound(type){try{const ctx=_getAudioCtx();const f={vote:[440,550],results:[330,440,550],win:[440,550,660,880],fanfare:[523,659,784,1047],correct:[660,880],wrong:[220,180]};(f[type]||f.vote).forEach((fr,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=fr;o.type=type==='fanfare'?'sine':'triangle';g.gain.setValueAtTime(.12,ctx.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.1+.3);o.start(ctx.currentTime+i*.1);o.stop(ctx.currentTime+i*.1+.3)});}catch(e){}}
+let _aC=null;
+function _gAC(){if(!_aC||_aC.state==='closed')_aC=new(window.AudioContext||window.webkitAudioContext)();if(_aC.state==='suspended')_aC.resume();return _aC;}
+document.addEventListener('touchstart',function _u(){_gAC();},{once:true,passive:true});
+function playSound(type){try{const ctx=_gAC();const f={vote:[440,550],results:[330,440,550],win:[440,550,660,880],fanfare:[523,659,784,1047],correct:[660,880],wrong:[220,180]};(f[type]||f.vote).forEach((fr,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=fr;o.type=type==='fanfare'?'sine':'triangle';g.gain.setValueAtTime(.12,ctx.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+i*.1+.3);o.start(ctx.currentTime+i*.1);o.stop(ctx.currentTime+i*.1+.3)});}catch(e){}}
 
 function launchConfetti(){const em=['🎉','🎊','⭐','💫','🌟','✨','🏆','🎖️'];const s=document.createElement('style');s.textContent='@keyframes fall{from{transform:translateY(0) rotate(0);opacity:1}to{transform:translateY(110vh) rotate(720deg);opacity:0}}';document.head.appendChild(s);for(let i=0;i<24;i++)setTimeout(()=>{const el=document.createElement('div');el.style.cssText=`position:fixed;top:-20px;left:${Math.random()*100}%;font-size:${Math.random()*1.5+1}rem;z-index:150;pointer-events:none;animation:fall ${Math.random()*2+1.5}s ease-in forwards`;el.textContent=em[Math.floor(Math.random()*em.length)];document.body.appendChild(el);setTimeout(()=>el.remove(),3500)},i*80)}
 
@@ -1185,7 +1175,7 @@ async function saveUserLqab(lqab) {
   if(!currentUser) return;
   const uid = currentUser.uid;
   const key = 'lqab_' + Date.now();
-  await db.ref(`users/${uid}/lqabs/${key}`).set({
+  await db.ref(`users/${uid}/lqabs/${key}`).update({
     name: lqab.badgeName || lqab.name || '؟',
     emoji: lqab.emoji || '🎭',
     ts: Date.now()
@@ -1317,49 +1307,49 @@ const MIN_EL_MASSEL_QS = [
 ];
 
 const EVEHAT_QS = [
-  {quote:'أنا مين؟ أنا مش عارف أنا مين!',movie:'الكيت كات',actor:'محمود عبد العزيز'},
-  {quote:'إيه المشكلة؟ الأكل والعيشة بقوا غالتين!',movie:'العيال كبرت',actor:'عادل إمام'},
-  {quote:'ربنا يكرمك يا معلم... أنا فقير!',movie:'بخيت وعديلة',actor:'نور الشريف'},
-  {quote:'يا عيني على الليلة دي يا نهار!',movie:'إسماعيلية رايح جاي',actor:'محمد هنيدي'},
-  {quote:'أنا صاحبك يا واد أنا صاحبك!',movie:'العفاريت',actor:'عادل إمام'},
-  {quote:'ده مش معقول يعني مش معقول!',movie:'المشبوه',actor:'عادل إمام'},
-  {quote:'يا ريت ما كنتيش اتجوزتيني!',movie:'زوجتي والكلب',actor:'فريد شوقي'},
-  {quote:'أيوه أنا غلطان... بس إيه اللي تعمله؟',movie:'الإرهاب والكباب',actor:'عادل إمام'},
-  {quote:'كلمني... كلمني بقى!',movie:'أمير الظلام',actor:'عادل إمام'},
-  {quote:'إنت بتاخد في إيه يا عم؟',movie:'طيور الظلام',actor:'نور الشريف'},
-  {quote:'الدنيا دي ما بتدوم لحد يا بني',movie:'عفاريت السيالة',actor:'يحيى الفخراني'},
-  {quote:'أنا مش لص... أنا بس بحبك!',movie:'حب في الزنزانة',actor:'عادل إمام'},
-  {quote:'يا ابني الدنيا ما بتتعدلش بالكلام',movie:'ليالي الحلمية',actor:'نور الشريف'},
-  {quote:'قوم يا بني... قوم يا حج!',movie:'الحاج متولي',actor:'نور الشريف'},
-  {quote:'إيه الحكاية؟ إيه اللي بيحصل ده؟',movie:'بمبة كشر',actor:'إسماعيل ياسين'},
-  {quote:'حياتي عليك يا ابني!',movie:'رد فعل',actor:'محمود عبد العزيز'},
-  {quote:'أنا غلطت... أنا غلطت يا خي!',movie:'الزوجة الثانية',actor:'صلاح ذو الفقار'},
-  {quote:'بكرة السفر من السكة',movie:'ابن حميدو',actor:'إسماعيل ياسين'},
-  {quote:'يلعن أبو الفلوس!',movie:'سواق الأتوبيس',actor:'نور الشريف'},
-  {quote:'أنا بقى مش ناقصه إلا ده!',movie:'الواد محروس بتاع الوزير',actor:'عادل إمام'},
-  {quote:'على إيدك يا قمر!',movie:'شيء من الخوف',actor:'شادية'},
-  {quote:'أنا رجل شريف وهكذا أموت!',movie:'الناصر صلاح الدين',actor:'أحمد مظهر'},
-  {quote:'اللي بيجي بالغلط بيروح بالغلط',movie:'العار',actor:'نور الشريف'},
-  {quote:'أيوه أنا فقير... ومش حاسس بالعار!',movie:'الكرنك',actor:'سعاد حسني'},
-  {quote:'اشمعنى إنت؟',movie:'مين فينا الحرامي',actor:'عادل إمام'},
-  {quote:'إيه الدنيا دي... إيه الدنيا!',movie:'الحفيد',actor:'يحيى الفخراني'},
-  {quote:'أنا بحبك يا بنتي... ده مش معناه إني بغلط',movie:'أريد حلاً',actor:'فاتن حمامة'},
-  {quote:'إنت تقدر تيجي معايا؟ تقدر؟',movie:'رد قلبي',actor:'عمر الشريف'},
-  {quote:'الشغل شرف يا أولاد!',movie:'الأرض',actor:'محمود المليجي'},
-  {quote:'ربنا ما بيسيبش حد يا ولدي',movie:'حمام الملاطيلي',actor:'عادل إمام'},
-  {quote:'ما تزعلش مني... أنا بحبك!',movie:'خلي بالك من زوزو',actor:'سعاد حسني'},
-  {quote:'الصبر مر بس أكلته حلو',movie:'المتسول',actor:'رشدي أباظة'},
-  {quote:'يا مايل يا مايل على الشمال!',movie:'عدو المرأة',actor:'إسماعيل ياسين'},
-  {quote:'إيه ده؟ الحياة اتقلبت علينا؟',movie:'جريمة في الحي الهادي',actor:'عادل إمام'},
-  {quote:'أنا مش كداب... أنا بس مش قلتلك!',movie:'سمير وشهير وبهير',actor:'محمد هنيدي'},
-  {quote:'مش هيبقى في خير... مش هيبقى في خير!',movie:'تيمور وشفيقة',actor:'محمد هنيدي'},
-  {quote:'يا ساتر يا رب... ده إيه ده!',movie:'اللعب مع الكبار',actor:'عادل إمام'},
-  {quote:'هو ده التمثيل... هو ده الفن!',movie:'بخيت وعديلة',actor:'نور الشريف'},
-  {quote:'اسكتي يا ست... اسكتي!',movie:'الزوجة 13',actor:'إسماعيل ياسين'},
-  {quote:'آخرتها إيه يا ترى... آخرتها إيه؟',movie:'القاهرة 30',actor:'حمدي أحمد'},
-  {quote:'أنا اللي بقى مش فاهم حاجة!',movie:'عريس من جهة أمنية',actor:'أشرف عبد الباقي'},
-  {quote:'بيشتغل إيه ده؟ بيشتغل بالكذب!',movie:'اللمبي',actor:'محمد سعد'},
-  {quote:'ياه على الزمن ياه!',movie:'البداية',actor:'محمود مرسي'},
+  {quote:'أنا مش بتاع مشاكل يا أستاذ',movie:'إسماعيلية رايح جاي',actor:'محمد هنيدي'},
+  {quote:'أنا آسف يا ريم',movie:'عمر وسلمى',actor:'تامر حسني'},
+  {quote:'ده أنا اللي بتعمل فيه كده',movie:'بوبوس',actor:'محمد سعد'},
+  {quote:'سيبك من ده ومعاك بكرة',movie:'اللمبي',actor:'محمد سعد'},
+  {quote:'ناس تاكل ناس وأنا ماكلش',movie:'عريس من جهة أمنية',actor:'أشرف عبد الباقي'},
+  {quote:'أنا بعيد عنك يا نهار',movie:'زهايمر',actor:'عادل إمام'},
+  {quote:'أنا مش لاقي كلام أقوله',movie:'صعيدي في الجامعة الأمريكية',actor:'محمد هنيدي'},
+  {quote:'الدنيا دي ما بتدوم لحد',movie:'الفيل الأزرق',actor:'كريم عبد العزيز'},
+  {quote:'أنا مش خايف أنا بس زهقت',movie:'آسف على الإزعاج',actor:'أحمد حلمي'},
+  {quote:'قلبي عارف إنك مش مصدقني',movie:'عمر وسلمى 2',actor:'تامر حسني'},
+  {quote:'أنا راجل غلبان وعايش بكرامتي',movie:'الكيت كات',actor:'محمود عبد العزيز'},
+  {quote:'ده مش في إيدي أعمله',movie:'ولاد رزق',actor:'أحمد عز'},
+  {quote:'الدم بيمشي في عروقي من أجلك',movie:'الممر',actor:'أحمد عز'},
+  {quote:'إيه اللي بيخلي واحد يعيش كده',movie:'حليم',actor:'أحمد زكي'},
+  {quote:'يا دي الفضيحة',movie:'اللمبي 8 جيجا',actor:'محمد سعد'},
+  {quote:'ربنا يكون في عونك',movie:'زوجتي والكلب',actor:'فريد شوقي'},
+  {quote:'أنا مش قادر أصدق اللي بيحصل ده',movie:'كيرة والجن',actor:'كريم عبد العزيز'},
+  {quote:'البلد دي محتاجة ناس زيك',movie:'الاختيار',actor:'أحمد مكي'},
+  {quote:'أنا هنا علشان أخدم بلدي',movie:'الممر',actor:'أحمد عز'},
+  {quote:'ربنا موجود وشايف',movie:'حسن ومرقص',actor:'عمر الشريف'},
+  {quote:'أنا عمري ما خنت حد',movie:'المصلحة',actor:'أحمد السقا'},
+  {quote:'يا دنيا يا غدارة',movie:'خلي بالك من زوزو',actor:'سعاد حسني'},
+  {quote:'لو ماتت ما حياش إيه',movie:'الكيت كات',actor:'محمود عبد العزيز'},
+  {quote:'دي حياتنا يا صاحبي',movie:'الكبير أوي',actor:'أكرم حسني'},
+  {quote:'مش هيبقى في خير',movie:'تيمور وشفيقة',actor:'محمد هنيدي'},
+  {quote:'الله يستر على اللي جاي',movie:'ولاد رزق 2',actor:'أحمد عز'},
+  {quote:'أنا مش ناقص حاجة',movie:'فيلم ثقافي',actor:'محمد هنيدي'},
+  {quote:'ده غلط يا بني',movie:'المشبوه',actor:'عادل إمام'},
+  {quote:'ما ينفعش يحصل ده',movie:'حملة فرعون',actor:'عادل إمام'},
+  {quote:'الجنة مكانك',movie:'الاختيار 2',actor:'ياسر جلال'},
+  {quote:'أنا ما ألومكوش',movie:'جريمة في الحي الهادي',actor:'عادل إمام'},
+  {quote:'أنا مش بهزر دلوقتي',movie:'عريس من جهة أمنية',actor:'أشرف عبد الباقي'},
+  {quote:'ده مش الكلام اللي كنت بستنيه',movie:'آسف على الإزعاج',actor:'أحمد حلمي'},
+  {quote:'خد بالك من نفسك',movie:'بوبوس',actor:'محمد سعد'},
+  {quote:'ده أنا عارفه من زمان',movie:'الفيل الأزرق 2',actor:'كريم عبد العزيز'},
+  {quote:'أنا مش قادر أصدق',movie:'الفرح',actor:'أحمد حلمي'},
+  {quote:'محتاجلك أوي',movie:'عمر وسلمى',actor:'تامر حسني'},
+  {quote:'ما اعملتش أي حاجة غلط في حياتي',movie:'جاء الفرح',actor:'أحمد فهمي'},
+  {quote:'كلنا بنتعب من حاجة',movie:'تراب الماس',actor:'أحمد حلمي'},
+  {quote:'أنا بحبك وخايف تتعذبي',movie:'موعد مع الحياة',actor:'فريد الأطرش'},
+  {quote:'إيه اللي جابك هنا',movie:'عبود على الحدود',actor:'عادل إمام'},
+  {quote:'يعني إيه بتقول كده',movie:'صعيدي في الجامعة الأمريكية',actor:'محمد هنيدي'},
+  {quote:'أنا ما ألومكوش',movie:'جريمة في الحي الهادي',actor:'عادل إمام'},
 ];
 
 const TAMSEL_AFLAM_QS = [
@@ -1629,8 +1619,7 @@ let renderLobbyPlayers=function _renderLobbyPlayers(players){
 
 window.copyRoomLink=function(){
   const url=new URL(window.location.href);url.searchParams.set('room',SS.roomCode);url.searchParams.set('mode','shella');
-  const joinUrl = window.location.origin + window.location.pathname + '?room=' + SS.roomCode + '&mode=shella';
-  navigator.clipboard.writeText(joinUrl).then(()=>toast('اتنسخ اللينك 🔗')).catch(()=>toast('اللينك: ' + joinUrl));
+  navigator.clipboard.writeText(url.toString()).then(()=>toast('اتنسخ اللينك 🔗')).catch(()=>{navigator.clipboard.writeText(SS.roomCode);toast('اتنسخ الكود: '+SS.roomCode)});
 };
 
 window.startGame=async function(){
@@ -1757,8 +1746,7 @@ let enterFinal=async function _enterFinal(room){
   document.getElementById('final-rewards').innerHTML=`<div class="reward-card win"><span class="reward-emoji">🏆</span><div class="reward-label">الفايز</div><div class="reward-who">${winner.avatar} ${esc(winner.name)}</div><div class="reward-what">${reward}</div></div><div class="reward-card lose"><span class="reward-emoji">😂</span><div class="reward-label">اللي عليه حكم</div><div class="reward-who">${loser.avatar} ${esc(loser.name)}</div><div class="reward-what">${punishment}</div></div>`;
   document.getElementById('final-leaderboard').innerHTML=players.map((p,i)=>{const rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';const ri=i===0?'🥇':i===1?'🥈':i===2?'🥉':`#${i+1}`;return`<div class="lb-row"><div class="lb-rank ${rc}">${ri}</div><div class="player-avatar av-${p.avatarColor}" style="width:40px;height:40px;font-size:1.3rem">${p.avatar}</div><div><div style="font-weight:800">${esc(p.name)} ${p.id===SS.playerId?'<span style="color:var(--green);font-size:.7rem">أنت</span>':''}</div><div style="font-size:.72rem;color:var(--sub)">${(p.badges||[]).map(b=>b.icon).join(' ')||'مفيش شارات'}</div></div><div class="lb-badges-count">${(p.badges||[]).length} 🏅</div></div>`}).join('');
   document.getElementById('final-player-cards').innerHTML=players.map(p=>`<div class="final-player-card"><div style="display:flex;align-items:center;gap:12px"><div class="player-avatar av-${p.avatarColor}" style="width:48px;height:48px;font-size:1.7rem">${p.avatar}</div><div><div style="font-weight:900;font-size:1.1rem">${esc(p.name)} ${p.id===SS.playerId?'👈':''}</div><div style="font-size:.8rem;color:var(--sub)">${(p.badges||[]).length} شارة</div></div></div><div class="badge-collection">${(p.badges||[]).length?(p.badges||[]).map(b=>`<div class="badge-pill" style="background:${b.color}22;border-color:${b.color}55;color:${b.color};padding:5px 10px">${b.icon} ${b.name}</div>`).join(''):'<span style="color:var(--sub);font-size:.85rem">مفيش شارات</span>'}</div></div>`).join('');
-  if(SS.isHost)document.getElementById('play-again-btn').style.display='flex';
-  document.getElementById('final-leave-btn').style.display='none';
+  if(SS.isHost)document.getElementById('play-again-btn').style.display='flex';document.getElementById('final-leave-btn').style.display='none';
   playSound('fanfare');launchConfetti();
 }
 
@@ -1852,16 +1840,16 @@ function koraRenderLobby(players){
   document.getElementById('kora-lobby-list').innerHTML=list.map(p=>`<div class="player-item"><div class="player-avatar av-${p.avatarColor}">${p.avatar}</div><div class="player-info"><div class="player-name">${esc(p.name)}</div></div>${p.isHost?'<span class="host-tag">👑 هوست</span>':''}${p.id===KS.playerId?'<span style="font-size:.72rem;color:var(--green);font-weight:800">أنت</span>':''}</div>`).join('');
 }
 
-koraFn.copyLink=()=>{const u=window.location.origin+window.location.pathname+'?room='+KS.roomCode+'&mode=kora';navigator.clipboard.writeText(u).then(()=>toast('اتنسخ اللينك 🔗')).catch(()=>toast('اللينك: '+u))};
+koraFn.copyLink=()=>{const u=window.location.origin+window.location.pathname+'?room='+KS.roomCode+'&mode=kora';navigator.clipboard.writeText(u).then(()=>toast('اتنسخ اللينك 🔗')).catch(()=>toast(u))};
 
 koraFn.start=async function(){
   const room=await dbGet(`kora/${KS.roomCode}`);
   if(Object.values(room.players||{}).length<2)return toast('محتاج لاعبين 👥');
-  if(!window._usedKoraQs)window._usedKoraQs=new Set();
-  const koraPool=KORA_QS.filter(q=>!window._usedKoraQs.has(q.q));
-  if(koraPool.length<10)window._usedKoraQs.clear();
-  const freshPool=KORA_QS.filter(q=>!window._usedKoraQs.has(q.q));
-  const qs=shuffle(freshPool).slice(0,10).map(q=>{window._usedKoraQs.add(q.q);const opts=shuffle(q.opts.map((o,i)=>({o,correct:i===q.ans})));return{cat:q.cat,q:q.q,opts}});
+  if(!window._usedQs)window._usedQs={};
+  if(!window._usedQs.kora)window._usedQs.kora=new Set();
+  let koraPool=KORA_QS.filter(q=>!window._usedQs.kora.has(q.q));
+  if(koraPool.length<10){window._usedQs.kora.clear();koraPool=KORA_QS;}
+  const qs=shuffle(koraPool).slice(0,10).map(q=>{window._usedQs.kora.add(q.q);const opts=shuffle(q.opts.map((o,i)=>({o,correct:i===q.ans})));return{cat:q.cat,q:q.q,opts}});
   await dbUpdate(`kora/${KS.roomCode}`,{phase:'playing',currentQ:0,answers:{},showResults:false,questions:qs});
 };
 
@@ -1899,20 +1887,13 @@ window.koraAnswer=async function(idx){
   const correct=q.opts[idx]?.correct||false;
   await dbSet(`kora/${KS.roomCode}/answers/${KS.playerId}_${KS.currentQ}`,{idx,correct,pts:correct?10:0});
   if(correct){const cur=(await dbGet(`kora/${KS.roomCode}/players/${KS.playerId}/score`))||0;await dbUpdate(`kora/${KS.roomCode}/players/${KS.playerId}`,{score:cur+10});playSound('correct')}else{playSound('wrong')}
-  // Highlight selected answer
-  const opts=document.querySelectorAll('.quiz-opt');
-  opts.forEach((el,i)=>{
-    el.classList.add('disabled');
-    if(i===idx){
-      el.style.background=correct?'rgba(0,255,136,.25)':'rgba(255,45,120,.25)';
-      el.style.borderColor=correct?'var(--green)':'var(--pink)';
-      el.style.color=correct?'var(--green)':'var(--pink)';
-    } else if(q.opts[i]?.correct){
-      el.style.background='rgba(0,255,136,.15)';
-      el.style.borderColor='rgba(0,255,136,.4)';
-    }
-  });
   document.getElementById('kora-answered').style.display='block';
+  // Highlight correct/wrong
+  document.querySelectorAll('.quiz-opt').forEach((el,i)=>{
+    el.classList.add('disabled');
+    if(i===idx){el.style.background=correct?'rgba(0,255,136,.25)':'rgba(255,45,120,.25)';el.style.borderColor=correct?'var(--green)':'var(--pink)';}
+    else if(q.opts[i]?.correct){el.style.background='rgba(0,255,136,.12)';el.style.borderColor='rgba(0,255,136,.3)';}
+  });
 };
 
 async function koraCheckAll(room){
@@ -2271,20 +2252,20 @@ function gquizRenderLobby(players){
   document.getElementById('gquiz-lobby-list').innerHTML=list.map(p=>`<div class="player-item"><div class="player-avatar av-${p.avatarColor}">${p.avatar}</div><div class="player-info"><div class="player-name">${esc(p.name)}</div></div>${p.isHost?'<span class="host-tag">👑 هوست</span>':''}${p.id===GQ.playerId?'<span style="font-size:.72rem;color:var(--green);font-weight:800">أنت</span>':''}</div>`).join('');
 }
 
-gquizFn.copyLink=()=>{const u=window.location.origin+window.location.pathname+'?room='+GQ.roomCode+'&mode='+(GQ.mode||'aela');navigator.clipboard.writeText(u).then(()=>toast('اتنسخ اللينك 🔗')).catch(()=>toast('اللينك: '+u))};
+gquizFn.copyLink=()=>{const u=window.location.origin+window.location.pathname+'?room='+GQ.roomCode+'&mode='+(GQ.mode||'aela');navigator.clipboard.writeText(u).then(()=>toast('اتنسخ اللينك 🔗')).catch(()=>toast(u))};
 
 gquizFn.start=async function(){
   const cfg=QUIZ_CONFIGS[GQ.mode];
   const room=await dbGet(`${cfg.dbPrefix}/${GQ.roomCode}`);
   if(Object.values(room.players||{}).length<2)return toast('محتاج لاعبين 👥');
   const isFlags=GQ.mode==='flags';
-  if(!window._usedGQqs)window._usedGQqs={};
-  const mkey=GQ.mode;
-  if(!window._usedGQqs[mkey])window._usedGQqs[mkey]=new Set();
-  const usedSet=window._usedGQqs[mkey];
-  let pool=cfg.questions.filter(q=>!usedSet.has(q.q));
-  if(pool.length<10){usedSet.clear();pool=cfg.questions;}
-  const qs=shuffle(pool).slice(0,10).map(q=>{usedSet.add(q.q);return{
+  if(!window._usedQs)window._usedQs={};
+  const _mkey=GQ.mode;
+  if(!window._usedQs[_mkey])window._usedQs[_mkey]=new Set();
+  let _pool=cfg.questions.filter(q=>!window._usedQs[_mkey].has(q.q));
+  if(_pool.length<10){window._usedQs[_mkey].clear();_pool=cfg.questions;}
+  const qs=shuffle(_pool).slice(0,10).map(q=>{
+    window._usedQs[_mkey].add(q.q);
     const opts=shuffle(q.opts.map((o,i)=>({o,correct:i===q.ans})));
     return{cat:q.cat,q:q.q,opts,isFlag:isFlags};
   });
@@ -2445,7 +2426,7 @@ window.addEventListener('beforeinstallprompt',e=>{
 });
 
 (function(){
-  if(localStorage.getItem('wtf_onboarded_v2'))return;
+  if(localStorage.getItem('wtf_onboarded_v3'))return;
   const steps=[
     {emoji:'☕',title:'أهلاً بيك في ع القهوة!',text:'لعبة مالتيبلاير مصرية للصحاب والعيلة — من غير تنزيل ومن غير تسجيل'},
     {emoji:'🎮',title:'12 لعبة متنوعة',text:'الشلة · الكورة · صراحة ولا تحدي · مسلسلات · أفلام · مين اللاعب · جغرافيا · حقائق غريبة · وأكتر'},
@@ -2471,7 +2452,7 @@ window.addEventListener('beforeinstallprompt',e=>{
   }
   window.__nextOnboard=function(){
     step++;
-    if(step>=steps.length){overlay.remove();localStorage.setItem('wtf_onboarded_v2','1');}
+    if(step>=steps.length){overlay.remove();localStorage.setItem('wtf_onboarded_v3','1');}
     else render();
   };
   document.body.appendChild(overlay);
@@ -3266,23 +3247,14 @@ enterFinal = async function(room) {
   }
   await _origEnterFinalShella(room);
 
-  if(room.players && currentUser) {
+  if(room.players && typeof currentUser !== 'undefined' && currentUser) {
     const me = Object.values(room.players).find(p => p.id === SS.playerId);
     if(me) {
-      // Save lqabs (badges won in this game)
       if(me.badges && me.badges.length > 0 && window._saveUserLqab) {
         for(const b of me.badges) { await window._saveUserLqab(b); }
       }
-      // Always save participation badge
       if(window._saveUserBadge) {
         await window._saveUserBadge({ name: 'لاعب الشلة', emoji: '👥', game: 'الشلة' });
-      }
-      // Save win if player has most badges
-      const allPlayers = Object.values(room.players);
-      const myBadgeCount = (me.badges||[]).length;
-      const maxBadges = Math.max(...allPlayers.map(p=>(p.badges||[]).length));
-      if(myBadgeCount > 0 && myBadgeCount >= maxBadges && window._saveQuizWin) {
-        await window._saveQuizWin('shella');
       }
     }
   }
@@ -3836,7 +3808,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
 
-<div class="screen" id="screen-min_el_la3eb-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-min_el_la3eb-game" style="width:100%;padding:0 4px">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-la3eb">سؤال 1 / 10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="guess-score-la3eb">نقاط: 0</div>
@@ -3871,7 +3843,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
 
-<div class="screen" id="screen-min_el_massel-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-min_el_massel-game" style="width:100%;padding:0 4px">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-massel">سؤال 1 / 10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="guess-score-massel">نقاط: 0</div>
@@ -3907,7 +3879,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
 
-<div class="screen" id="screen-evehat-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-evehat-game" style="align-items:stretch">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="evehat-counter">سؤال 1 / 43</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="evehat-score">نقاط: 0</div>
@@ -3943,7 +3915,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
 
-<div class="screen" id="screen-tamsel_aflam-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-tamsel_aflam-game" style="align-items:stretch">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="tamsel-counter">فيلم 1 / 50</div>
     <div style="display:flex;gap:12px">
@@ -3975,7 +3947,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-primary" onclick="window.startAghniya()">🎵 ابدأ</button>
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
-<div class="screen" id="screen-aghniya-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-aghniya-game" style="align-items:stretch">
   <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="aghniya-counter">1/10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="aghniya-score">0 نقطة</div>
@@ -4008,7 +3980,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-primary" onclick="window.startKdabSah()">🤥 ابدأ</button>
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
-<div class="screen" id="screen-kdab_sah-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-kdab_sah-game" style="align-items:stretch">
   <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="kdab-counter">1/10</div>
   </div>
@@ -4034,7 +4006,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-primary" onclick="window.startGeography()">🌍 ابدأ</button>
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
-<div class="screen" id="screen-geography-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-geography-game" style="align-items:stretch">
   <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="geo-counter">1/10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="geo-score">0 نقطة</div>
@@ -4056,7 +4028,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-primary" onclick="window.startWeirdFacts()">🤯 ابدأ</button>
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
-<div class="screen" id="screen-weird_facts-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-weird_facts-game" style="align-items:stretch">
   <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="wf-counter">1/10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="wf-score">0 نقطة</div>
@@ -4089,7 +4061,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-primary" onclick="window.startPredict()">🔮 ابدأ</button>
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
-<div class="screen" id="screen-predict-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-predict-game" style="align-items:stretch">
   <div style="font-weight:900;font-size:.9rem;color:var(--sub);width:100%;text-align:left" id="predict-counter">1/10</div>
   <div class="card" style="width:100%;text-align:center;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
     <div style="font-size:2.5rem">🔮</div>
@@ -4109,7 +4081,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-primary" onclick="window.startSnap()">⚡ ابدأ</button>
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
-<div class="screen" id="screen-snap-game" style="align-items:stretch;width:100%">
+<div class="screen" id="screen-snap-game" style="align-items:stretch">
   <div style="display:flex;justify-content:space-between;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="snap-counter">1/10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="snap-score">0 نقطة</div>
