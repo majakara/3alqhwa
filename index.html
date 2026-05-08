@@ -8,10 +8,10 @@
 <style>
 :root{--purple:#b026ff;--blue:#00d4ff;--pink:#ff2d78;--green:#00ff88;--yellow:#ffe600;--orange:#ff8c00;--bg:#0d0a1a;--card:rgba(255,255,255,0.06);--card2:rgba(255,255,255,0.10);--text:#f0e8ff;--sub:rgba(240,232,255,0.6);--r:20px;--sh:0 8px 32px rgba(176,38,255,0.18)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Tajawal','Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;background-image:radial-gradient(ellipse at 20% 10%,rgba(176,38,255,0.18) 0%,transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(0,212,255,0.12) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(255,45,120,0.06) 0%,transparent 70%)}
+body{font-family:'Tajawal','Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;display:flex;justify-content:center;background-image:radial-gradient(ellipse at 20% 10%,rgba(176,38,255,0.18) 0%,transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(0,212,255,0.12) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(255,45,120,0.06) 0%,transparent 70%)}
 .stars{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .star{position:absolute;border-radius:50%;background:white;animation:twinkle var(--d,3s) infinite alternate;opacity:0}
-#app{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 16px 48px}
+#app{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 16px 48px;margin:0 auto;width:100%;max-width:480px}
 .screen{width:100%;max-width:480px;display:none;flex-direction:column;align-items:center;gap:18px;animation:fadeUp .4s ease}
 .screen.active{display:flex}
 @keyframes twinkle{from{opacity:0;transform:scale(.5)}to{opacity:var(--o,.7);transform:scale(1)}}
@@ -288,136 +288,174 @@ h2.section-title{font-weight:900;font-size:1.05rem;color:var(--sub);text-align:c
     <h1 style="font-size:2.6rem;letter-spacing:-1px;background:linear-gradient(135deg,#ffe600,#ff9800,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0">ع القهوة</h1>
     <p style="font-size:.7rem;color:rgba(255,255,255,.3);font-weight:800;margin:0;letter-spacing:4px">PARTY GAMES</p>
   </div>
-  <!-- QUICK START -->
-  <button onclick="window.goMode('shella')" style="width:100%;padding:18px;border-radius:18px;border:none;background:linear-gradient(135deg,#b026ff,#ff2d78);color:white;font-family:inherit;font-weight:900;font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 24px rgba(176,38,255,.4)">
-    👥 ابدأ لعب مع صحابك فوراً
-  </button>
-
-  <!-- SECTION: مالتيبلاير أونلاين -->
-  <div style="width:100%;display:flex;align-items:center;gap:8px;margin-top:4px">
-    <span style="flex:1;height:1px;background:rgba(176,38,255,.25)"></span>
-    <span style="font-size:.72rem;color:rgba(176,38,255,.8);font-weight:900;white-space:nowrap;letter-spacing:1px">🌐 مالتيبلاير أونلاين</span>
-    <span style="flex:1;height:1px;background:rgba(176,38,255,.25)"></span>
-  </div>
-  <div class="mode-grid">
+  <!-- Category: Online Multiplayer -->
+  <div style="width:100%;font-weight:900;font-size:.78rem;color:var(--sub);letter-spacing:2px;text-transform:uppercase;padding:4px 2px">🌐 أونلاين — العب مع صحابك</div>
+  <div class="mode-grid" id="online-grid">
     <div class="mode-card" style="--mc1:#b026ff" onclick="goMode('shella')">
       <div class="mode-icon">👥</div>
-      <div class="mode-info"><div class="mode-name">الشلة</div><div class="mode-desc">صوّت على صحابك واكشف مين فيكم إيه</div><span class="mode-badge" style="background:rgba(176,38,255,.15);color:#b026ff;border:1px solid rgba(176,38,255,.3)">مالتيبلاير · جماعي</span></div>
+      <div class="mode-info">
+        <div class="mode-name">الشلة</div>
+        <div class="mode-desc">صوّت على صحابك واكشف مين فيكم إيه</div>
+        <span class="mode-badge" style="background:rgba(176,38,255,.2);color:#b026ff;border:1px solid rgba(176,38,255,.4)">مالتيبلاير · جماعي</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
     <div class="mode-card" style="--mc1:#00d4ff" onclick="goMode('kora')">
       <div class="mode-icon">⚽</div>
-      <div class="mode-info"><div class="mode-name">كويز الكورة</div><div class="mode-desc">أسئلة كورة مصرية وعالمية — مين فيكم الأعلم؟</div><span class="mode-badge" style="background:rgba(0,212,255,.15);color:#00d4ff;border:1px solid rgba(0,212,255,.3)">مالتيبلاير · نقاط</span></div>
+      <div class="mode-info">
+        <div class="mode-name">كويز الكورة</div>
+        <div class="mode-desc">أسئلة كورة مصرية وعالمية — مين فيكم الأعلم؟</div>
+        <span class="mode-badge" style="background:rgba(0,212,255,.15);color:#00d4ff;border:1px solid rgba(0,212,255,.3)">مالتيبلاير · نقاط</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-    <div class="mode-card" style="--mc1:#e91e63" onclick="goMode('masalsalat')">
-      <div class="mode-icon">📺</div>
-      <div class="mode-info"><div class="mode-name">مسلسلات مصرية</div><div class="mode-desc">أسئلة مسلسلات من الثمانينات للحديث</div><span class="mode-badge" style="background:rgba(233,30,99,.15);color:#e91e63;border:1px solid rgba(233,30,99,.3)">مالتيبلاير · كويز</span></div>
+    <div class="mode-card" style="--mc1:#ff8c00" onclick="goMode('saraha')">
+      <div class="mode-icon">🎯</div>
+      <div class="mode-info">
+        <div class="mode-name">صراحة ولا تحدي</div>
+        <div class="mode-desc">اختار بين سؤال صراحة أو تحدي حرش مع الشلة</div>
+        <span class="mode-badge" style="background:rgba(255,140,0,.15);color:#ff8c00;border:1px solid rgba(255,140,0,.3)">لوكال · سريع</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-    <div class="mode-card" style="--mc1:#ff5722" onclick="goMode('aflam_arabi')">
-      <div class="mode-icon">🎬</div>
-      <div class="mode-info"><div class="mode-name">أفلام عربي</div><div class="mode-desc">أسئلة عن أشهر الأفلام المصرية والعربية</div><span class="mode-badge" style="background:rgba(255,87,34,.15);color:#ff5722;border:1px solid rgba(255,87,34,.3)">مالتيبلاير · كويز</span></div>
-      <div class="mode-arrow">›</div>
-    </div>
-    <div class="mode-card" style="--mc1:#9c27b0" onclick="goMode('aflam_3alami')">
-      <div class="mode-icon">🌎</div>
-      <div class="mode-info"><div class="mode-name">أفلام وسيريز عالمي</div><div class="mode-desc">Marvel · Netflix · أوسكار — مين الأعلم؟</div><span class="mode-badge" style="background:rgba(156,39,176,.15);color:#9c27b0;border:1px solid rgba(156,39,176,.3)">مالتيبلاير · كويز</span></div>
-      <div class="mode-arrow">›</div>
-    </div>
-    <div class="mode-card" style="--mc1:#00ff88" onclick="goMode('aela')">
+  </div>
+  <!-- Category: Local Games -->
+  <div style="width:100%;font-weight:900;font-size:.78rem;color:var(--sub);letter-spacing:2px;text-transform:uppercase;padding:4px 2px;margin-top:8px">🏠 في اللمة — العبوا مع بعض</div>
+  <div class="mode-grid" id="local-grid">    <div class="mode-card" style="--mc1:#00ff88" onclick="goMode('aela')">
       <div class="mode-icon">👨‍👩‍👧‍👦</div>
-      <div class="mode-info"><div class="mode-name">كويز العيلة</div><div class="mode-desc">أسئلة تنفع للكبار والصغار</div><span class="mode-badge" style="background:rgba(0,255,136,.15);color:#00ff88;border:1px solid rgba(0,255,136,.3)">مالتيبلاير · عيلي</span></div>
+      <div class="mode-info">
+        <div class="mode-name">كويز العيلة</div>
+        <div class="mode-desc">أسئلة تنفع للكبار والصغار — العبوا مع بعض</div>
+        <span class="mode-badge" style="background:rgba(0,255,136,.15);color:#00ff88;border:1px solid rgba(0,255,136,.3)">مالتيبلاير · عيلي</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
     <div class="mode-card" style="--mc1:#ffe600" onclick="goMode('science')">
       <div class="mode-icon">🔬</div>
-      <div class="mode-info"><div class="mode-name">كويز العلوم</div><div class="mode-desc">علوم وحقائق وتاريخ — اختبر معلوماتك</div><span class="mode-badge" style="background:rgba(255,230,0,.15);color:#ffe600;border:1px solid rgba(255,230,0,.3)">مالتيبلاير · كويز</span></div>
+      <div class="mode-info">
+        <div class="mode-name">كويز العلوم</div>
+        <div class="mode-desc">أسئلة علمية سهلة ومتوسطة — اختبر معلوماتك</div>
+        <span class="mode-badge" style="background:rgba(255,230,0,.15);color:#ffe600;border:1px solid rgba(255,230,0,.3)">مالتيبلاير · علمي</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-    <div class="mode-card" style="--mc1:#2196f3" onclick="goMode('geography')">
-      <div class="mode-icon">🌍</div>
-      <div class="mode-info"><div class="mode-name">جغرافيا</div><div class="mode-desc">عواصم وبلاد وحقائق جغرافية</div><span class="mode-badge" style="background:rgba(33,150,243,.15);color:#2196f3;border:1px solid rgba(33,150,243,.3)">مالتيبلاير · كويز</span></div>
+    <div class="mode-card" style="--mc1:#e91e63" onclick="goMode('masalsalat')">
+      <div class="mode-icon">📺</div>
+      <div class="mode-info">
+        <div class="mode-name">مسلسلات مصرية</div>
+        <div class="mode-desc">كويز في مسلسلاتنا الحلوة — من الكلاسيك للحديث</div>
+        <span class="mode-badge" style="background:rgba(233,30,99,.15);color:#e91e63;border:1px solid rgba(233,30,99,.3)">مالتيبلاير · دراما</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-  </div>
-
-  <!-- SECTION: ألعاب اجتماعية -->
-  <div style="width:100%;display:flex;align-items:center;gap:8px;margin-top:4px">
-    <span style="flex:1;height:1px;background:rgba(255,152,0,.25)"></span>
-    <span style="font-size:.72rem;color:rgba(255,152,0,.9);font-weight:900;white-space:nowrap;letter-spacing:1px">😂 ألعاب اجتماعية</span>
-    <span style="flex:1;height:1px;background:rgba(255,152,0,.25)"></span>
-  </div>
-  <div class="mode-grid">
-    <div class="mode-card" style="--mc1:#ff8c00" onclick="goMode('saraha')">
-      <div class="mode-icon">🎯</div>
-      <div class="mode-info"><div class="mode-name">صراحة ولا تحدي</div><div class="mode-desc">اختار بين صراحة أو تحدي مع الشلة</div><span class="mode-badge" style="background:rgba(255,140,0,.15);color:#ff8c00;border:1px solid rgba(255,140,0,.3)">لوكال · سريع</span></div>
+    <div class="mode-card" style="--mc1:#ff5722" onclick="goMode('aflam_arabi')">
+      <div class="mode-icon">🎬</div>
+      <div class="mode-info">
+        <div class="mode-name">أفلام عربي</div>
+        <div class="mode-desc">هتعرف كل حاجة في السينما المصرية والعربية؟</div>
+        <span class="mode-badge" style="background:rgba(255,87,34,.15);color:#ff5722;border:1px solid rgba(255,87,34,.3)">مالتيبلاير · سينما</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-    <div class="mode-card" style="--mc1:#f44336" onclick="goMode('kdab_sah')">
-      <div class="mode-icon">🤥</div>
-      <div class="mode-info"><div class="mode-name">كداب ولا صح؟</div><div class="mode-desc">قول حاجة عن نفسك والشلة تحكم</div><span class="mode-badge" style="background:rgba(244,67,54,.15);color:#f44336;border:1px solid rgba(244,67,54,.3)">لوكال · مضحك</span></div>
+    <div class="mode-card" style="--mc1:#9c27b0" onclick="goMode('aflam_3alami')">
+      <div class="mode-icon">🌎</div>
+      <div class="mode-info">
+        <div class="mode-name">أفلام وسيريز عالمي</div>
+        <div class="mode-desc">Marvel · Netflix · كلاسيكيات · أوسكار — مين الأعلم؟</div>
+        <span class="mode-badge" style="background:rgba(156,39,176,.15);color:#9c27b0;border:1px solid rgba(156,39,176,.3)">مالتيبلاير · هوليوود</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-    <div class="mode-card" style="--mc1:#9c27b0" onclick="goMode('predict')">
-      <div class="mode-icon">🔮</div>
-      <div class="mode-info"><div class="mode-name">توقعات الشلة</div><div class="mode-desc">مين أكتر واحد يعمل كذا؟ صوتوا</div><span class="mode-badge" style="background:rgba(156,39,176,.15);color:#9c27b0;border:1px solid rgba(156,39,176,.3)">لوكال · جماعي</span></div>
-      <div class="mode-arrow">›</div>
-    </div>
-    <div class="mode-card" style="--mc1:#607d8b" onclick="goMode('weird_facts')">
-      <div class="mode-icon">🤯</div>
-      <div class="mode-info"><div class="mode-name">حقائق غريبة</div><div class="mode-desc">حقيقة غريبة — صح ولا غلط؟</div><span class="mode-badge" style="background:rgba(96,125,139,.15);color:#90a4ae;border:1px solid rgba(96,125,139,.3)">لوكال · مضحك</span></div>
-      <div class="mode-arrow">›</div>
-    </div>
-  </div>
-
-  <!-- SECTION: ألعاب تخمين -->
-  <div style="width:100%;display:flex;align-items:center;gap:8px;margin-top:4px">
-    <span style="flex:1;height:1px;background:rgba(0,255,136,.25)"></span>
-    <span style="font-size:.72rem;color:rgba(0,255,136,.8);font-weight:900;white-space:nowrap;letter-spacing:1px">🔍 ألعاب تخمين</span>
-    <span style="flex:1;height:1px;background:rgba(0,255,136,.25)"></span>
-  </div>
-  <div class="mode-grid">
     <div class="mode-card" style="--mc1:#ff6b35" onclick="goMode('min_el_la3eb')">
       <div class="mode-icon">⚽</div>
-      <div class="mode-info"><div class="mode-name">مين اللاعب؟</div><div class="mode-desc">اقرأ الهنت وخمّن الشخصية المشهورة</div><span class="mode-badge" style="background:rgba(255,107,53,.15);color:#ff6b35;border:1px solid rgba(255,107,53,.3)">تخمين · جماعي</span></div>
+      <div class="mode-info">
+        <div class="mode-name">مين اللاعب؟</div>
+        <div class="mode-desc">اقرأ الهنت وخمّن الشخصية المشهورة</div>
+        <span class="mode-badge" style="background:rgba(255,107,53,.15);color:#ff6b35;border:1px solid rgba(255,107,53,.3)">تخمين · جماعي</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
     <div class="mode-card" style="--mc1:#9c27b0" onclick="goMode('min_el_massel')">
       <div class="mode-icon">🎭</div>
-      <div class="mode-info"><div class="mode-name">مين الممثل؟</div><div class="mode-desc">خمّن الممثل المصري من الهنت</div><span class="mode-badge" style="background:rgba(156,39,176,.15);color:#9c27b0;border:1px solid rgba(156,39,176,.3)">تخمين · جماعي</span></div>
-      <div class="mode-arrow">›</div>
-    </div>
-    <div class="mode-card" style="--mc1:#4caf50" onclick="goMode('aghniya')">
-      <div class="mode-icon">🎵</div>
-      <div class="mode-info"><div class="mode-name">مين الأغنية؟</div><div class="mode-desc">كلمات أغنية مصرية — خمّن مين غناها</div><span class="mode-badge" style="background:rgba(76,175,80,.15);color:#4caf50;border:1px solid rgba(76,175,80,.3)">تخمين · جماعي</span></div>
+      <div class="mode-info">
+        <div class="mode-name">مين الممثل؟</div>
+        <div class="mode-desc">خمّن الممثل المصري من الهنت</div>
+        <span class="mode-badge" style="background:rgba(156,39,176,.15);color:#9c27b0;border:1px solid rgba(156,39,176,.3)">تخمين · جماعي</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
     <div class="mode-card" style="--mc1:#00bcd4" onclick="goMode('evehat')">
       <div class="mode-icon">💬</div>
-      <div class="mode-info"><div class="mode-name">إيفيهات أفلام</div><div class="mode-desc">جملة من فيلم مصري — الفيلم ده إيه؟</div><span class="mode-badge" style="background:rgba(0,188,212,.15);color:#00bcd4;border:1px solid rgba(0,188,212,.3)">تخمين · جماعي</span></div>
+      <div class="mode-info">
+        <div class="mode-name">إيفيهات أفلام</div>
+        <div class="mode-desc">الجملة دي من فيلم إيه؟</div>
+        <span class="mode-badge" style="background:rgba(0,188,212,.15);color:#00bcd4;border:1px solid rgba(0,188,212,.3)">كويز · ماتيلير</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-  </div>
-
-  <!-- SECTION: ألعاب تمثيل وسرعة -->
-  <div style="width:100%;display:flex;align-items:center;gap:8px;margin-top:4px">
-    <span style="flex:1;height:1px;background:rgba(255,230,0,.25)"></span>
-    <span style="font-size:.72rem;color:rgba(255,230,0,.8);font-weight:900;white-space:nowrap;letter-spacing:1px">🎬 تمثيل وسرعة</span>
-    <span style="flex:1;height:1px;background:rgba(255,230,0,.25)"></span>
-  </div>
-  <div class="mode-grid">
     <div class="mode-card" style="--mc1:#ff9800" onclick="goMode('tamsel_aflam')">
       <div class="mode-icon">🎬</div>
-      <div class="mode-info"><div class="mode-name">تمثيل أفلام</div><div class="mode-desc">مثّل الفيلم والشلة تخمّن — ممنوع الكلام</div><span class="mode-badge" style="background:rgba(255,152,0,.15);color:#ff9800;border:1px solid rgba(255,152,0,.3)">تمثيل · جماعي</span></div>
+      <div class="mode-info">
+        <div class="mode-name">تمثيل أفلام</div>
+        <div class="mode-desc">مثّل الفيلم والشلة تخمّن — ممنوع الكلام</div>
+        <span class="mode-badge" style="background:rgba(255,152,0,.15);color:#ff9800;border:1px solid rgba(255,152,0,.3)">تمثيل · جماعي</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#4caf50" onclick="goMode('aghniya')">
+      <div class="mode-icon">🎵</div>
+      <div class="mode-info">
+        <div class="mode-name">مين الأغنية؟</div>
+        <div class="mode-desc">كلمات أغنية مصرية — خمّن مين غناها</div>
+        <span class="mode-badge" style="background:rgba(76,175,80,.15);color:#4caf50;border:1px solid rgba(76,175,80,.3)">تخمين · جماعي</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#f44336" onclick="goMode('kdab_sah')">
+      <div class="mode-icon">🤥</div>
+      <div class="mode-info">
+        <div class="mode-name">كداب ولا صح؟</div>
+        <div class="mode-desc">قول حاجة عن نفسك والشلة تحكم</div>
+        <span class="mode-badge" style="background:rgba(244,67,54,.15);color:#f44336;border:1px solid rgba(244,67,54,.3)">اجتماعي · مضحك</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#2196f3" onclick="goMode('geography')">
+      <div class="mode-icon">🌍</div>
+      <div class="mode-info">
+        <div class="mode-name">جغرافيا</div>
+        <div class="mode-desc">أسئلة عن عواصم وبلاد وحقائق</div>
+        <span class="mode-badge" style="background:rgba(33,150,243,.15);color:#2196f3;border:1px solid rgba(33,150,243,.3)">ثقافي · ماتيلير</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
     <div class="mode-card" style="--mc1:#ff5722" onclick="goMode('snap')">
       <div class="mode-icon">⚡</div>
-      <div class="mode-info"><div class="mode-name">سناب — الأسرع يكسب</div><div class="mode-desc">كلمة تظهر — الأول يضغط يكسب</div><span class="mode-badge" style="background:rgba(255,87,34,.15);color:#ff5722;border:1px solid rgba(255,87,34,.3)">سرعة · جماعي</span></div>
+      <div class="mode-info">
+        <div class="mode-name">سناب — الأسرع يكسب</div>
+        <div class="mode-desc">صورة تظهر — الأول يعرف يكسب</div>
+        <span class="mode-badge" style="background:rgba(255,87,34,.15);color:#ff5722;border:1px solid rgba(255,87,34,.3)">سرعة · جماعي</span>
+      </div>
       <div class="mode-arrow">›</div>
     </div>
-  </div>
+    <div class="mode-card" style="--mc1:#9c27b0" onclick="goMode('predict')">
+      <div class="mode-icon">🔮</div>
+      <div class="mode-info">
+        <div class="mode-name">توقعات الشلة</div>
+        <div class="mode-desc">مين أكتر واحد يعمل كذا؟ صوتوا</div>
+        <span class="mode-badge" style="background:rgba(156,39,176,.15);color:#9c27b0;border:1px solid rgba(156,39,176,.3)">اجتماعي · جماعي</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>
+    <div class="mode-card" style="--mc1:#607d8b" onclick="goMode('weird_facts')">
+      <div class="mode-icon">🤯</div>
+      <div class="mode-info">
+        <div class="mode-name">حقائق غريبة</div>
+        <div class="mode-desc">حقيقة غريبة — صح ولا غلط؟</div>
+        <span class="mode-badge" style="background:rgba(96,125,139,.15);color:#90a4ae;border:1px solid rgba(96,125,139,.3)">ثقافي · مضحك</span>
+      </div>
+      <div class="mode-arrow">›</div>
+    </div>  </div>
 
   <!-- ORDER PHYSICAL GAME -->
   <div class="order-box">
@@ -3715,12 +3753,12 @@ window.showTamselResults = function() {
 
 // ── UPDATE goMode FOR NEW MODES ──
 window.goMode = function(mode) {
-  const allModes = ['kora','aela','science','masalsalat','aflam_arabi','aflam_3alami',
-    'min_el_la3eb','min_el_massel','evehat','tamsel_aflam',
-    'aghniya','kdab_sah','geography','weird_facts','predict','snap'];
+  const multiModes = ['kora','aela','science','masalsalat','aflam_arabi','aflam_3alami'];
+  const localModes = ['min_el_la3eb','min_el_massel','evehat','tamsel_aflam'];
   if (mode === 'shella') showScreen('shella-setup');
   else if (mode === 'saraha') showScreen('saraha-setup');
-  else if (allModes.includes(mode)) showScreen(mode + '-setup');
+  else if (multiModes.includes(mode)) showScreen(mode + '-setup');
+  else if (localModes.includes(mode)) showScreen(mode + '-setup');
   else showScreen('home');
 };
 
@@ -3741,7 +3779,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
 
-<div class="screen" id="screen-min_el_la3eb-game">
+<div class="screen" id="screen-min_el_la3eb-game" style="width:100%;padding:0 4px">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-la3eb">سؤال 1 / 10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="guess-score-la3eb">نقاط: 0</div>
@@ -3776,7 +3814,7 @@ window.goHome = () => showScreen('home');
   <button class="btn btn-ghost" onclick="goHome()">رجوع</button>
 </div>
 
-<div class="screen" id="screen-min_el_massel-game">
+<div class="screen" id="screen-min_el_massel-game" style="width:100%;padding:0 4px">
   <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:8px">
     <div style="font-weight:900;font-size:.9rem;color:var(--sub)" id="guess-counter-massel">سؤال 1 / 10</div>
     <div style="font-weight:900;font-size:.9rem;color:var(--yellow)" id="guess-score-massel">نقاط: 0</div>
